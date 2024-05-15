@@ -1,0 +1,31 @@
+import './assets/main.css'
+/* routing */
+import router from './router'
+import { createApp } from 'vue'
+import App from './App.vue'
+const appp = createApp(App);
+appp.use(router)
+appp.mount('#app')
+
+
+import { provide, h } from 'vue'
+import { DefaultApolloClient } from '@vue/apollo-composable'
+import { ApolloClient, InMemoryCache } from '@apollo/client/core'
+
+const cache = new InMemoryCache()
+
+const apolloClient = new ApolloClient({
+  cache,
+  uri: 'https://rickandmortyapi.com/graphql',
+})
+
+const app = createApp({
+  setup () {
+    provide(DefaultApolloClient, apolloClient)
+  },
+
+  render: () => h(App),
+})
+
+
+
