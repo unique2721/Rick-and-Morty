@@ -24,7 +24,7 @@ episodes {
 }
 }
 `);
-console.log(episodes)
+
 </script>
 
 <template>
