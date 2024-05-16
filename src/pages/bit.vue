@@ -10,14 +10,10 @@ query {
     emoji
     capital
     code
-    phone
-    
+    phone 
   }
 }
 `);
-
-
-
 </script>
 <template>
 

@@ -11,52 +11,47 @@ import {ref} from 'vue'
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 
-// const episodes = ref([]);
-// const characters = ref([]);
-// const locations = ref([]);
+const episodes = ref([]);
+const characters = ref([]);
+const locations = ref([]);
 
 /* episodes */
-const {episodes }  = useQuery(gql`
+
+const {result }  = useQuery(gql`
   query {
     episodes {
      results {
       name
      }
    }
- }
-  `);
+ }`);
+
 
  /* characters */
-const {characters }  = useQuery(gql`
+const {resultt }  = useQuery(gql`
   query {
 characters {
   results {
     name
   }
-}
-}
-  `);
+ }
+}`);
 
 /* locations */
-const {locations }  = useQuery(gql`
+const {resulttt }  = useQuery(gql`
  query {
 locations {
   results {
     name
   }
-}
-}
-
-  `);
-
-/* query data for each here */
+ }
+}`);
 </script>
+/* query data for each here */
 
 <template>
-
   <div class="p-5">
     <div>
-
       <h1 class="text-center text-3xl p-7 font-bold">
         Welcome to Rick and Morty
       </h1>
@@ -102,55 +97,39 @@ locations {
     </h3>
     <h3>rating: <strong>9.1</strong> / <strong>10</strong></h3>
   </div>
-  
-  <!-- carousels -->
-  <div>
-
-  </div>
 </div>
   
-  <!-- list of episodes -->
   <div class="flex justify-between">
-    <div>
-      <ul>
-        <li>Episodes name</li>
-      </ul>
-    </div>
-    <!-- list of characters -->
-    <div>
-      <ul>
-        <li>Characters name</li>
-      </ul>
-    </div>
-    <!-- list of locations -->
-    <div>
-      <ul>
-        <li>Locations name</li>
-      </ul>
-    </div>
+  <!-- list of episodes -->
+    <div v-for="episode in result?.episodes || []" :key="episode.id" class="text-xl" > 
+      <RouterLink
+      :to="`/episodes/${episode.id}`">
+      {{ episode[0].name }}
+      {{ episode[1].name }}
+      {{ episode[2].name }}
+      {{ episode[3].name }}
+      {{ episode[4].name }}
+      {{ episode[5].name }}
+      {{ episode[6].name }}
+      {{ episode[7].name }}
+      
+    </RouterLink>
+  </div>
 
-    <!-- <RouterLink
-      v-for="episode in episodes"
-      :key="episode.id"
-      :to="`/episodes/${episode.id}`"
-    >
-      {{ episode.name }}
-    </RouterLink> -->
-    <!-- List each character -->
-    <!-- <RouterLink
-      v-for="character in characters"
-      :key="character.id"
-      :to="`/characters/${character.id}`"
-    >
-      {{ character.name }}
-    </RouterLink> -->
-    <!-- List each location -->
-    <!-- <RouterLink
-      v-for="location in locations"
-      :key="location.id"
-      :to="`/locations/${location.id}`"
-    >
-      {{ location.name }}
-    </RouterLink> -->
+    <!-- list of characters -->
+    <div v-for="character in resultt?.characters || []" > 
+      <RouterLink
+      :to="`/characters/${character.id}`">
+      {{ character }}
+    </RouterLink>
+  </div>
+
+    <!-- list of locations -->
+    <div v-for="location in resulttt?.locations || []" > 
+      <RouterLink
+      :to="`/locations/${location.id}`">
+      {{ location }}
+    </RouterLink>
+  </div>
   </div>
 </template>

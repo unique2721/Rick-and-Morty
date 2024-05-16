@@ -13,7 +13,7 @@ const cache = new InMemoryCache()
 
 const apolloClient = new ApolloClient({
     cache,
-    uri: 'https://countries.trevorblades.com',
+    uri: 'https://rickandmortyapi.com/graphql',
 })
 
 const app = createApp({

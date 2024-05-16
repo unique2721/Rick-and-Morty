@@ -5,6 +5,7 @@ import Home from '../pages/Home.vue'
 import Episodes from '../pages/Episodes.vue'
 import Locations from '../pages/Locations.vue'
 import Characters from '../pages/Characters.vue'
+import episodesview from '../pages/episodesview.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,11 +34,11 @@ const router = createRouter({
             name: 'Locations',
             component: Locations
         },
-        //  {
-        //     path: '/episodes/:id',
-        //     name: 'Episodes',
-        //     component: Episodes,
-        // },
+         {
+            path: '/episodes/:id',
+            name: 'Episodesview',
+            component: episodesview,
+        },
         // {
         //     path: '/characters:id',
         //     name: 'Characters',
