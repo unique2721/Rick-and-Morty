@@ -1,8 +1,35 @@
-<script setup></script>
+<script setup>
+import {ref} from 'vue'
+import { useQuery } from "@vue/apollo-composable";
+import gql from "graphql-tag";
+
+const episodes = ref([]);
+
+const {result }  = useQuery(gql`
+query {
+episodes {
+  results {
+    name
+    air_date
+    episode
+    created
+    characters {
+      name
+      status
+      species
+      gender
+      image
+    }
+  }
+}
+}
+`);
+console.log(episodes)
+</script>
 
 <template>
-  <h1>Episodes page</h1>
-  <div>
+  <h1>Episode Details</h1>
+  <div v-for="episode in result?.episodes || []">
     <h1>Name: {{ episode.name }}</h1>
     <p>Air Date: {{ episode.air_date }}</p>
     <p>Episode: {{ episode.episode }}</p>

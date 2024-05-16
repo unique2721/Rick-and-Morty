@@ -1,21 +1,76 @@
 <script setup>
 /* routing */
 import { RouterLink } from "vue-router";
+/* carousels */
+import { Carousel, Slide } from 'vue-carousel';
+/* carousel images */
+
+import images from '../data/images.json'
+/* querying */
+import {ref} from 'vue'
+import { useQuery } from "@vue/apollo-composable";
+import gql from "graphql-tag";
+
+// const episodes = ref([]);
+// const characters = ref([]);
+// const locations = ref([]);
+
+/* episodes */
+const {episodes }  = useQuery(gql`
+  query {
+    episodes {
+     results {
+      name
+     }
+   }
+ }
+  `);
+
+ /* characters */
+const {characters }  = useQuery(gql`
+  query {
+characters {
+  results {
+    name
+  }
+}
+}
+  `);
+
+/* locations */
+const {locations }  = useQuery(gql`
+ query {
+locations {
+  results {
+    name
+  }
+}
+}
+
+  `);
+
+
+
+
+
 
 /* query data for each here */
 </script>
 
 <template>
+
   <div class="p-5">
-    <h1 class="text-center text-3xl p-7 font-bold">
-      Welcome to Rick and Morty
-    </h1>
-    <p>
-      Rick and Morty is an American adult animated science fiction sitcom
-      created by <strong>Justin Roiland</strong> and
-      <strong>Dan Harmon</strong>. The show follows the misadventures of an
-      eccentric, alcoholic scientist Rick Sanchez and his good-hearted but
-      easily influenced grandson Morty Smith, who split their time between
+    <div>
+
+      <h1 class="text-center text-3xl p-7 font-bold">
+        Welcome to Rick and Morty
+      </h1>
+      <p>
+        Rick and Morty is an American adult animated science fiction sitcom
+        created by <strong>Justin Roiland</strong> and
+        <strong>Dan Harmon</strong>. The show follows the misadventures of an
+        eccentric, alcoholic scientist Rick Sanchez and his good-hearted but
+        easily influenced grandson Morty Smith, who split their time between
       domestic life and interdimensional adventures.
     </p>
     <p>
@@ -52,6 +107,13 @@ import { RouterLink } from "vue-router";
     </h3>
     <h3>rating: <strong>9.1</strong> / <strong>10</strong></h3>
   </div>
+  
+  <!-- carousels -->
+  <div>
+
+  </div>
+</div>
+  
   <!-- list of episodes -->
   <div class="flex justify-between">
     <div>
@@ -72,28 +134,28 @@ import { RouterLink } from "vue-router";
       </ul>
     </div>
 
-    <RouterLink
+    <!-- <RouterLink
       v-for="episode in episodes"
       :key="episode.id"
-      :to="`/episode/${episode.id}`"
+      :to="`/episodes/${episode.id}`"
     >
       {{ episode.name }}
-    </RouterLink>
+    </RouterLink> -->
     <!-- List each character -->
-    <RouterLink
+    <!-- <RouterLink
       v-for="character in characters"
       :key="character.id"
-      :to="`/character/${character.id}`"
+      :to="`/characters/${character.id}`"
     >
       {{ character.name }}
-    </RouterLink>
+    </RouterLink> -->
     <!-- List each location -->
-    <RouterLink
+    <!-- <RouterLink
       v-for="location in locations"
       :key="location.id"
-      :to="`/location/${location.id}`"
+      :to="`/locations/${location.id}`"
     >
       {{ location.name }}
-    </RouterLink>
+    </RouterLink> -->
   </div>
 </template>

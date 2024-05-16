@@ -3,29 +3,28 @@ import './assets/main.css'
 import router from './router'
 import { createApp } from 'vue'
 import App from './App.vue'
-const appp = createApp(App);
-appp.use(router)
-appp.mount('#app')
 
-
-import { provide, h } from 'vue'
+import {  provide, h } from 'vue'
 import { DefaultApolloClient } from '@vue/apollo-composable'
 import { ApolloClient, InMemoryCache } from '@apollo/client/core'
+
 
 const cache = new InMemoryCache()
 
 const apolloClient = new ApolloClient({
-  cache,
-  uri: 'https://rickandmortyapi.com/graphql',
+    cache,
+    uri: 'https://countries.trevorblades.com',
 })
 
 const app = createApp({
-  setup () {
+    setup () {
     provide(DefaultApolloClient, apolloClient)
-  },
+},
 
-  render: () => h(App),
+render: () => h(App),
 })
 
-
+app.use(router)
+app.mount('#app');
+﻿
 

@@ -1,10 +1,10 @@
 /* DEFINING OUR ROUTING RULES */
 import { createRouter,createWebHistory } from "vue-router";
-/* Components */
-import Home from '../components/Home.vue'
-import Episodes from '../components/Episodes.vue'
-import Locations from '../components/Locations.vue'
-import Characters from '../components/Characters.vue'
+/* pages */
+import Home from '../pages/Home.vue'
+import Episodes from '../pages/Episodes.vue'
+import Locations from '../pages/Locations.vue'
+import Characters from '../pages/Characters.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,21 +33,21 @@ const router = createRouter({
             name: 'Locations',
             component: Locations
         },
-       /*  {
-            path: '/episodes/:id',
-            name: 'Episodes',
-            component: Episodes,
-        },
-        {
-            path: '/characters:id',
-            name: 'Characters',
-            component: Characters,
-        },
-        {
-            path: '/locations:id',
-            name: 'Locations',
-            component: Locations,
-        } */
+        //  {
+        //     path: '/episodes/:id',
+        //     name: 'Episodes',
+        //     component: Episodes,
+        // },
+        // {
+        //     path: '/characters:id',
+        //     name: 'Characters',
+        //     component: Characters,
+        // },
+        // {
+        //     path: '/locations:id',
+        //     name: 'Locations',
+        //     component: Locations,
+        // } 
     ]
 })
 
