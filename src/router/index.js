@@ -38,17 +38,7 @@ const router = createRouter({
             path: '/episodes/:id',
             name: 'Episodesview',
             component: episodesview,
-        },
-        // {
-        //     path: '/characters:id',
-        //     name: 'Characters',
-        //     component: Characters,
-        // },
-        // {
-        //     path: '/locations:id',
-        //     name: 'Locations',
-        //     component: Locations,
-        // } 
+        } 
     ]
 })
 

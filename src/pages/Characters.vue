@@ -5,11 +5,11 @@ import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 
 const characters = ref([]);
-
-const {result }  = useQuery(gql`
+const {result:charactersResult }  = useQuery(gql`
   query {
   characters {
     results {
+      id
       name
       status
       species
@@ -36,9 +36,9 @@ const {result }  = useQuery(gql`
 <template>
   <h1>Character Details</h1>
 
-  <div v-for="character in result?.characters || []">
+  <div v-for="character in charactersResult?.characters || []">
     <!-- Show character details -->
-    <img :src="character.image" alt="character.name" style="width: 100px" />
+    <img :src="character.image" :alt="character.name" style="width: 100px" />
     <h1>Name: {{ character.name }}</h1>
     <p>Status: {{ character.status }}</p>
     <p>Species: {{ character.species }}</p>
@@ -53,8 +53,6 @@ const {result }  = useQuery(gql`
       </li>
     </ul>
     <h2>Last Known Location</h2>
-    <p>Name: {{ character.location.name }}</p>
-    <p>Type: {{ character.location.type }}</p>
-    <p>Dimension: {{ character.location.dimension }}</p> 
+     
   </div>
 </template>

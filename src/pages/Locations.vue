@@ -5,10 +5,11 @@ import gql from "graphql-tag";
 
 const locations = ref([]);
 
-const {result }  = useQuery(gql`
+const {result:locationsResult }  = useQuery(gql`
     query {
      locations {
      results {
+       id
        name
        type
        dimension
@@ -28,7 +29,7 @@ const {result }  = useQuery(gql`
 
 <template>
   <h1>Location Details</h1>
-  <div v-for="location in result?.locations || []">
+  <div v-for="location in locationsResult?.locations || []">
     <!-- Show location details -->
     <h1>Name: {{ location.name }}</h1>
     <p>Type: {{ location.type }}</p>
