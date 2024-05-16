@@ -3,10 +3,7 @@ import { useRoute, useRouter } from "vue-router";
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-const route = useRoute();
-const router = useRouter();
 
-console.log(router)
 
 const episodes = ref([]);
 const { result:episodesResult } = useQuery(gql`
