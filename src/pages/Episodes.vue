@@ -29,18 +29,18 @@ console.log
 <template>
   <h1>Episode Details</h1>
   <div v-for="episode in result?.episodes || []">
-    <h1>Name: {{ episode[0].name }}</h1>
-    <p>Air Date: {{ episode[0].air_date }}</p>
-    <p>Episode: {{ episode[0].episode }}</p>
-    <p>Created: {{ episode[0].created }}</p>
+    <h1>Name: {{ episode.name }}</h1>
+    <p>Air Date: {{ episode.air_date }}</p>
+    <p>Episode: {{ episode.episode }}</p>
+    <p>Created: {{ episode.created }}</p>
     <h2>Characters in this Episode</h2>
     <ul>
       <li v-for="character in episode.characters" :key="character.id">
         <img :src="character.image" alt="character.name" style="width: 100px" />
-        <p>Name: {{ character[0].name }}</p>
-        <p>Status: {{ character[0].status }}</p>
-        <p>Species: {{ character[0].species }}</p>
-        <p>Gender: {{ character[0].gender }}</p>
+        <p>Name: {{ character.name }}</p>
+        <p>Status: {{ character.status }}</p>
+        <p>Species: {{ character.species }}</p>
+        <p>Gender: {{ character.gender }}</p>
       </li>
     </ul>
   </div>
