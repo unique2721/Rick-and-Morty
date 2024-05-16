@@ -49,11 +49,6 @@ locations {
 
   `);
 
-
-
-
-
-
 /* query data for each here */
 </script>
 
