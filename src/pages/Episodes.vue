@@ -37,10 +37,10 @@ console.log
     <ul>
       <li v-for="character in episode.characters" :key="character.id">
         <img :src="character.image" alt="character.name" style="width: 100px" />
-        <p>Name: {{ character.name }}</p>
-        <p>Status: {{ character.status }}</p>
-        <p>Species: {{ character.species }}</p>
-        <p>Gender: {{ character.gender }}</p>
+        <p>Name: {{ character[0].name }}</p>
+        <p>Status: {{ character[0].status }}</p>
+        <p>Species: {{ character[0].species }}</p>
+        <p>Gender: {{ character[0].gender }}</p>
       </li>
     </ul>
   </div>
