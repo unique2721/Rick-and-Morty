@@ -44,7 +44,13 @@ const { result, loading, error } = useQuery(locationResult);
   <div v-else>
   <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
     <div v-for="location in result.locations.results" :key="location.id">
-    
+      <div>
+      <h1>Name: {{ location.name }}</h1>
+      <p>Type: {{ location.air_date }}</p>
+      <p>Dimension: {{ location.dimension }}</p>
+      <p>Created: {{ location.created }}</p>
+      <h2>Residents in this Location</h2> 
+    </div>
     </div>
   </div>
   </div>
