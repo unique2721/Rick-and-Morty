@@ -17,6 +17,9 @@ import { Location } from "graphql";
       <h1 class="text-center text-3xl p-7 font-bold">
         Welcome to <span>Rick and Morty</span>
       </h1>
+      <div>
+        
+      </div>
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
         created by <strong>Justin Roiland</strong> and
@@ -47,10 +50,10 @@ import { Location } from "graphql";
         and Morty has become one of the most beloved and influential animated
         series of the 21st century.
       </p>
-      <h3>
+      <h1>
         created by: <strong>Justin Roiland</strong> and
         <strong>Dan Harmon</strong>
-      </h3>
+      </h1>
       <h3>Genere: <strong>animated science fiction sitcom</strong></h3>
       <h3>
         Stars: <strong>Justin Roiland</strong> and <strong>Dan Harmon</strong>
