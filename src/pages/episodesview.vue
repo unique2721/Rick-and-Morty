@@ -7,3 +7,8 @@
         <h1>episodes view</h1>
     </div>
 </template>
+
+<style scoped>
+
+
+</style>
