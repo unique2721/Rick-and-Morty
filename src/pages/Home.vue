@@ -10,54 +10,30 @@ import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 
-
-
 /* episodes */
 
-const {
-  result: episodesResult,
-  loading,
-  error,
-} = useQuery(gql`
-  query {
-    episodes {
-      results {
-        name
-      }
-    }
-  }
-`);
-
 /* characters */
-const { result: charactersResult } = useQuery(gql`
-  query {
+const characterResult = gql`
+  query Characters {
     characters {
       results {
+        id
         name
         image
       }
     }
   }
-`);
+`;
 
-/* locations */
-const { result: locationsResult } = useQuery(gql`
-  query {
-    locations {
-      results {
-        name
-      }
-    }
-  }
-`);
+const { result, loading, error } = useQuery(characterResult);
 </script>
 /* query data for each here */
 
 <template>
-  <div class="p-5">
+  <div class="p-5 flex justify-between">
     <div>
       <h1 class="text-center text-3xl p-7 font-bold">
-        Welcome to Rick and Morty
+        Welcome to <span>Rick and Morty</span>
       </h1>
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
@@ -99,43 +75,56 @@ const { result: locationsResult } = useQuery(gql`
       </h3>
       <h3>rating: <strong>9.1</strong> / <strong>10</strong></h3>
     </div>
-    <-- carousel of images -->
+    <div>
+      <img src="../images//logo.png" alt="">
+    </div>
   </div>
-  <div class="flex justify-between">
-    <!-- list of episodes -->
-    <div v-if="loading">
-      <p>loading...</p>
-    </div>
-    <div v-else-if="error">
-      <p>Error: {{ error.message }}</p>
-    </div>
-    <div v-else>
-      <div v-for="episode in episodesResult?.episodes || []" class="text-xl">
-        <RouterLink :to="`/episodes/${episode.id}`" class="episodes">
-          <p class="e">{{ episode }}</p>
-        </RouterLink>
-      </div>
 
-      <!-- list of characters -->
-      <div v-for="character in charactersResult?.characters || []">
-        <RouterLink :to="`/characters/${character.id}`">
-          <p>{{ character }}</p>
-        </RouterLink>
-      </div>
+  <!-- list of episodes -->
 
-      <!-- list of locations -->
-      <div v-for="location in locationsResult?.locations || []">
-        <RouterLink :to="`/locations/${location.id}`">
-          <p>{{ location }}</p>
-        </RouterLink>
-      </div>
+  <!-- list of characters -->
+  <div class="i">
+    <span class="text-3xl">Characters</span> <input type="text" placeholder="search character by name"  />
+  </div>
+  <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
+  <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
+  <p v-else class="text-center text-3xl">oops, Something went wrong!!</p>
+  <div class="c grid grid-cols-3 gap-5 p-5" v-else>
+    <div v-for="character in result.characters.results" :key="character.id" class="ch">
+      <RouterLink :to="`/characters/${character.id}`">
+      <div class="whole grid grid-cols-3 gap-5 rounded-xl">
+        <img :src="character.image" alt="character image" class="rounded-tl-lg rounded-bl-lg h-[200px] w-[400px]" />
+          <div class="flex justify-center items-center text-center text-white">
+            <h1 class="text-3xl">{{ character.name }}</h1>
+          </div>
+        </div>
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <style scoped>
-.e {
-  margin-left: 20px;
-  font-size: 1.3rem;
+.c {
+  background-color: darkslategrey;
+}
+
+.whole {
+  background-color: rgba(0, 0, 0, 0.666);
+}
+.i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+input {
+  padding: 5px;
+  font-size: 1.5rem;
+  border: 2px solid;
+  border-radius: 10px;
+  outline: none;
+  margin-left: 10px;
 }
 </style>
+
+

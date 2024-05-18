@@ -38,7 +38,17 @@ const router = createRouter({
             path: '/episodes/:id',
             name: 'Episodesview',
             component: episodesview,
-        } 
+        },
+         {
+            path: '/characters/:id',
+            name: 'Episodesview',
+            component: Characters,
+        },
+         {
+            path: '/locations/:id',
+            name: 'LocationsView',
+            component: Locations,
+        }
     ]
 })
 

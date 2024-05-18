@@ -1,13 +1,18 @@
 <script setup>
-import { useRoute, useRouter } from "vue-router";
+/* query only needed data here */
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 
+/* route information */
+import { useRoute } from "vue-router";
+const route = useRoute();
 
-const episodes = ref([]);
-const { result:episodesResult } = useQuery(gql`
-  query {
+const characterId = parseInt(route.params.id);
+console.log(route.params.id);
+
+const episodeResult = gql`
+  query Episodes{
     episodes {
       results {
         id
@@ -16,6 +21,7 @@ const { result:episodesResult } = useQuery(gql`
         episode
         created
         characters {
+          id
           name
           status
           species
@@ -25,26 +31,48 @@ const { result:episodesResult } = useQuery(gql`
       }
     }
   }
-`);
-console.log;
+`;
+const { result, loading, error } = useQuery(episodeResult);
 </script>
 
 <template>
-  <h1>Episode Details</h1>
-  <div v-for="episode in episodesResult?.episodes || []">
-    <h1>Name: {{ episode.name }}</h1>
-    <p>Air Date: {{ episode.air_date }}</p>
-    <p>Episode: {{ episode.episode }}</p>
-    <p>Created: {{ episode.created }}</p>
-    <h2>Characters in this Episode</h2>
-    <ul>
-      <li v-for="character in episode.characters" :key="character.id">
-        <img :src="character.image" alt="character.name" style="width: 100px" />
-        <p>Name: {{ character.name }}</p>
-        <p>Status: {{ character.status }}</p>
-        <p>Species: {{ character.species }}</p>
-        <p>Gender: {{ character.gender }}</p>
-      </li>
-    </ul>
+  <h1 class="text-center text-3xl">List of Episodes</h1>
+  <p v-if="error">
+    Something went wrong... <span>error: {{ error.message }}</span>
+  </p>
+  <p class="text-center text-3xl" v-if="loading">Loading...</p>
+  <div v-else>
+  <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
+   <div class="whole" v-for="episode in result.episodes.results" :key="episode.id">
+    <div>
+      <h1>Name: {{ episode.name }}</h1>
+      <p>Air Date: {{ episode.air_date }}</p>
+      <p>Episode: {{ episode.episode }}</p>
+      <p>Created: {{ episode.created }}</p>
+      <h2>Characters in this Episode</h2> 
+    </div>
+    <div class="flex justify-between items-center"  v-for="character in episode.characters" :key="character.id">
+      <img :src="`${character.image}`" :alt="character.name" class="w-[200px] h-[200px]">
+      <ul>
+        <li>
+          <p>Name: {{ character.status }}</p>
+          <p>Air Date: {{ character.species }}</p>
+          <p>Episode: {{ character.gender }}</p>
+        </li>
+      </ul>
+    </div>
+
   </div>
+</div>
+</div>
 </template>
+
+<style scoped>
+.c {
+  background-color: darkslategrey;
+}
+
+.whole {
+  background-color: rgba(0, 0, 0, 0.734);
+}
+</style>
