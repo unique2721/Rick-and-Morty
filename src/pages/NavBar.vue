@@ -5,12 +5,12 @@ import {RouterLink} from 'vue-router'
 </script>
 
 <template>
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center flex-wrap sticky top-0 z-10 bg-slate-600 text-white">
         <img src="../images/logo.png" alt="Rick and morty logo" class=" h-20 italic ml-[20px]">
-        <div class="i">
-        <input type="text" placeholder="search by name"  />
+        <div class="flex justify-center items-center m-[20px]">
+        <input class="p-[5px] border-4 rounded-md text-black" type="text" placeholder="search by name"  />
         </div>
-        <ul class="flex p-10">
+        <ul class="flex p-[10px]">
             <li class=" px-10 text-xl"><RouterLink active-class="active" to="/">Home</RouterLink></li>
             <li class=" px-10 text-xl"><RouterLink active-class="active" to="/episodes">Episodes</RouterLink></li>
             <li class=" px-10 text-xl"><RouterLink active-class="active" to="/characters">Characters</RouterLink></li>
@@ -20,22 +20,7 @@ import {RouterLink} from 'vue-router'
 </template>
 
 <style scoped>
-.active {
-    background-color: rgba(0, 0, 0, 0.225);
-}
 
-.i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-input {
-  padding: 5px;
-  font-size: 1.5rem;
-  border: 2px solid;
-  border-radius: 10px;
-  outline: none;
-  margin-left: 10px;
-}
+
+
 </style>

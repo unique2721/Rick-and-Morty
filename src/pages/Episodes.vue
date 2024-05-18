@@ -44,15 +44,15 @@ const { result, loading, error } = useQuery(episodeResult);
    <h1 class="text-center text-3xl">Episode Details</h1>
   <div class="c text-white text-3xl">
    <div class="whole" v-for="episode in result.episodes.results" :key="episode.id">
-    <div>
+    <div class="flex justify-center items-center flex-wrap flex-col">
       <h1>Name: {{ episode.name }}</h1>
       <p>Air Date: {{ episode.air_date }}</p>
       <p>Episode: {{ episode.episode }}</p>
       <p>Created: {{ episode.created }}</p>
       <h2>Characters in this Episode</h2> 
     </div>
-    <div  v-for="character in episode.characters" :key="character.id">
-      <div> 
+    <div class="grid grid-cols-3 gap-5"  v-for="character in episode.characters" :key="character.id">
+      <div class="flex justify-between items-center flex-wrap"> 
         <img :src="`${character.image}`" :alt="character.name" class="w-[200px] h-[200px]">
         <ul>
           <li>
