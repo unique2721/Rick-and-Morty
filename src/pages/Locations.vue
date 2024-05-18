@@ -54,8 +54,6 @@ const { result, loading, error } = useQuery(locationResult);
     </div>
   </div>
   </div>
-
-
 </template>
 
 <style scoped>
