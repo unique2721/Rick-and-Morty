@@ -36,12 +36,12 @@ const { result, loading, error } = useQuery(episodeResult);
 </script>
 
 <template>
-  <h1 class="text-center text-3xl">List of Episodes</h1>
   <p v-if="error">
     Something went wrong... <span>error: {{ error.message }}</span>
   </p>
   <p class="text-center text-3xl" v-if="loading">Loading...</p>
   <div v-else>
+   <h1 class="text-center text-3xl">Episode Details</h1>
   <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
    <div class="whole" v-for="episode in result.episodes.results" :key="episode.id">
     <div>
@@ -75,4 +75,5 @@ const { result, loading, error } = useQuery(episodeResult);
 .whole {
   background-color: rgba(0, 0, 0, 0.734);
 }
+
 </style>

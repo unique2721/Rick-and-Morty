@@ -2,10 +2,15 @@
 import {ref} from 'vue'
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
+/* route information */
+import { useRoute } from "vue-router";
+const route = useRoute();
 
-const locations = ref([]);
+const locationId = parseInt(route.params.id);
+console.log(route.params.id);
 
-const {result:locationsResult }  = useQuery(gql`
+
+const locationResult = (gql`
     query {
      locations {
      results {
@@ -15,6 +20,7 @@ const {result:locationsResult }  = useQuery(gql`
        dimension
        created
        residents {
+         id
          name
          status
          species
@@ -24,29 +30,29 @@ const {result:locationsResult }  = useQuery(gql`
      }
    }
  }
-     `);
+`);
+const { result, loading, error } = useQuery(locationResult);
+
 </script>
 
 <template>
-  <h1>Location Details</h1>
-  <div v-for="location in locationsResult?.locations || []">
-    <!-- Show location details -->
-    <h1>Name: {{ location.name }}</h1>
-    <p>Type: {{ location.type }}</p>
-    <p>Dimension: {{ location.dimension }}</p>
-    <p>Created: {{ location.created }}</p>
-
-    <h2>Residents</h2>
-    <ul>
-      <li v-for="resident in location.residents" :key="resident.id">
-        <img :src="resident.image" alt="resident.name" style="width: 100px" />
-        <p>Name: {{ resident.name }}</p>
-        <p>Status: {{ resident.status }}</p>
-        <p>Species: {{ resident.species }}</p>
-        <p>Gender: {{ resident.gender }}</p>
-      </li>
-    </ul> 
+  <p v-if="error">
+    Something went wrong... <span>error: {{ error.message }}</span>
+  </p>
+  <h1 class="text-center text-3xl">Location Details</h1>
+  <p class="text-center text-3xl" v-if="loading">Loading...</p>
+  <div v-else>
+  <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
+    <div v-for="location in result.locations.results" :key="location.id">
+    
+    </div>
   </div>
+  </div>
+
+
 </template>
 
-<style scoped></style>
+<style scoped>
+
+
+</style>
