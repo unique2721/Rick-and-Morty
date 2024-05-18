@@ -42,7 +42,7 @@ const { result, loading, error } = useQuery(episodeResult);
   <p class="text-center text-3xl" v-if="loading">Loading...</p>
   <div v-else>
    <h1 class="text-center text-3xl">Episode Details</h1>
-  <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
+  <div class="c text-white text-3xl">
    <div class="whole" v-for="episode in result.episodes.results" :key="episode.id">
     <div>
       <h1>Name: {{ episode.name }}</h1>
@@ -51,17 +51,19 @@ const { result, loading, error } = useQuery(episodeResult);
       <p>Created: {{ episode.created }}</p>
       <h2>Characters in this Episode</h2> 
     </div>
-    <div class="flex justify-between items-center"  v-for="character in episode.characters" :key="character.id">
-      <img :src="`${character.image}`" :alt="character.name" class="w-[200px] h-[200px]">
-      <ul>
-        <li>
-          <p>Name: {{ character.status }}</p>
-          <p>Air Date: {{ character.species }}</p>
-          <p>Episode: {{ character.gender }}</p>
-        </li>
-      </ul>
+    <div  v-for="character in episode.characters" :key="character.id">
+      <div> 
+        <img :src="`${character.image}`" :alt="character.name" class="w-[200px] h-[200px]">
+        <ul>
+          <li>
+            <p>Name: {{ character.name }}</p>
+            <p>Status: {{ character.status }}</p>
+            <p>Species: {{ character.species }}</p>
+            <p>Gender: {{ character.gender }}</p>
+          </li>
+        </ul>
     </div>
-
+    </div>
   </div>
 </div>
 </div>

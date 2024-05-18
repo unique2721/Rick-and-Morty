@@ -10,7 +10,7 @@ const locationId = parseInt(route.params.id);
 console.log(route.params.id);
 
 
-const locationResult = (gql`
+const locationResult = gql`
     query {
      locations {
      results {
@@ -30,29 +30,28 @@ const locationResult = (gql`
      }
    }
  }
-`);
+`;
 const { result, loading, error } = useQuery(locationResult);
 
 </script>
 
 <template>
-  <p v-if="error">
-    Something went wrong... <span>error: {{ error.message }}</span>
-  </p>
-  <h1 class="text-center text-3xl">Location Details</h1>
-  <p class="text-center text-3xl" v-if="loading">Loading...</p>
+  <p class="text-center text-3xl" v-if="error">Error: {{ error.message }} </p>
+  <p class="text-center text-3xl" v-else-if="loading && !error">Loading...</p>
   <div v-else>
-  <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
-    <div v-for="location in result.locations.results" :key="location.id">
-      <div>
-      <h1>Name: {{ location.name }}</h1>
-      <p>Type: {{ location.air_date }}</p>
-      <p>Dimension: {{ location.dimension }}</p>
-      <p>Created: {{ location.created }}</p>
-      <h2>Residents in this Location</h2> 
+    <h1 class="text-center text-3xl">Location Details</h1>
+
+      <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
+        <div v-for="location in result.locations.results" :key="location.id">
+          <div>
+            <h1>Name: {{ location.name }}</h1>
+            <p>Type: {{ location.air_date }}</p>
+            <p>Dimension: {{ location.dimension }}</p>
+            <p>Created: {{ location.created }}</p>
+            <h2>Residents in this Location</h2> 
+          </div>
+        </div>
     </div>
-    </div>
-  </div>
   </div>
 </template>
 

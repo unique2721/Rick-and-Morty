@@ -12,8 +12,19 @@ import gql from "graphql-tag";
 
 /* episodes */
 
+const episodeResult = gql`
+ query {
+  episodes {
+    results {
+      id
+      name
+    }
+  }
+ }
+`
+const {resultt} = useQuery(episodeResult);
 /* characters */
-const characterResult = gql`
+const characterResult = ref(gql`
   query Characters {
     characters {
       results {
@@ -23,9 +34,10 @@ const characterResult = gql`
       }
     }
   }
-`;
+`);
 
 const { result, loading, error } = useQuery(characterResult);
+console.log(result)
 </script>
 /* query data for each here */
 
@@ -81,24 +93,24 @@ const { result, loading, error } = useQuery(characterResult);
   </div>
 
   <!-- list of episodes -->
-
+  
+  
   <!-- list of characters -->
-  <div class="i">
-    <span class="text-3xl">Characters</span> <input type="text" placeholder="search character by name"  />
-  </div>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
   <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
-  <p v-else class="text-center text-3xl">oops, Something went wrong!!</p>
-  <div class="c grid grid-cols-3 gap-5 p-5" v-else>
-    <div v-for="character in result.characters.results" :key="character.id" class="ch">
-      <RouterLink :to="`/characters/${character.id}`">
-      <div class="whole grid grid-cols-3 gap-5 rounded-xl">
-        <img :src="character.image" alt="character image" class="rounded-tl-lg rounded-bl-lg h-[200px] w-[400px]" />
-          <div class="flex justify-center items-center text-center text-white">
-            <h1 class="text-3xl">{{ character.name }}</h1>
+  <div  v-else>
+    <h1 class=" h1 text-center text-3xl">List of Characters</h1>
+    <div class="c grid grid-cols-3 gap-5 p-5">
+      <div v-for="character in result.characters.results" :key="character.id" class="ch">
+        <RouterLink :to="`/characters/${character.id}`">
+          <div class="whole grid grid-cols-3 gap-5 rounded-xl">
+            <img :src="character.image" alt="character image" class="rounded-tl-lg rounded-bl-lg h-[200px] w-[4000px]" />
+            <div class="flex justify-center items-center text-center text-white">
+              <h1 class="text-3xl">{{ character.name }}</h1>
+            </div>
           </div>
-        </div>
-      </RouterLink>
+        </RouterLink>
+      </div>
     </div>
   </div>
 </template>
@@ -106,25 +118,20 @@ const { result, loading, error } = useQuery(characterResult);
 <style scoped>
 .c {
   background-color: darkslategrey;
+
+}
+.h1 {
+  margin: 15px;
+  font-weight: bold;
 }
 
 .whole {
   background-color: rgba(0, 0, 0, 0.666);
 }
-.i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+.whole:hover {
+  box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.655);
 }
-input {
-  padding: 5px;
-  font-size: 1.5rem;
-  border: 2px solid;
-  border-radius: 10px;
-  outline: none;
-  margin-left: 10px;
-}
+
 </style>
 
 

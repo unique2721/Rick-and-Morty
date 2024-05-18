@@ -11,35 +11,6 @@ const route = useRoute();
 const characterId = parseInt(route.params.id);
 console.log(route.params.id);
 
-// const characterDetails = gql`
-//   query Characters {
-//   characters {
-//     results {
-//       id
-//       name
-//       status
-//       species
-//       gender
-//       image
-//       episode {
-//         id
-//         name
-//         air_date
-//         episode
-//         created
-//       }
-//       location {
-//         id
-//         name
-//         type
-//         dimension
-//       }
-//     }
-//   }
-// }
-// `;
-// const { result, loading, error } = useQuery(characterDetails);
-
 const characterResult = gql`
   query Characters {
     characters {
