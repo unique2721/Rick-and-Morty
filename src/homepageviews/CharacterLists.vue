@@ -26,16 +26,16 @@ const { result, loading, error } = useQuery(characterResult);
     <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
     <div v-else>
     <h1 class="font-bold m-[15px] text-center text-3xl">List of Characters</h1>
-    <div class="c grid grid-cols-3 gap-5 p-5">
+    <div class="bg-slate-900 grid grid-cols-3 gap-5 p-5">
       <div v-for="character in result.characters.results" :key="character.id">
         <RouterLink :to="`/characters/${character.id}`">
-          <div class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-black flex justify-between items-center flex-wrap italic">
+          <div class="hover:border-2 shadow-xl border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap italic">
           <img
             :src="character.image"
             :alt="character.name"
             class="rounded-tl-lg rounded-bl-lg w-[250px]"
           />
-          <div>  
+          <div class="pr-5">  
             <h1 class=" hover:underline hover:text-orange-400 text-white text-3xl">{{ character.name }}</h1>
           </div>
       </div>
@@ -46,14 +46,4 @@ const { result, loading, error } = useQuery(characterResult);
 </template>
 
 <style scoped>
-.c {
-  background-color: rgba(0, 0, 0, 0.854);
-
-}
-.whole {
-  background-color: rgba(0, 0, 0, 0.666);
-}
-.whole:hover {
-  box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.655);
-}
 </style>

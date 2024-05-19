@@ -29,17 +29,16 @@ const locationResult = gql`
        }
      }
    }
- }
-`;
+ }`;
 const { result, loading, error } = useQuery(locationResult);
 
 </script>
 
 <template>
+  <h1 class="text-center text-3xl font-bold m-[20px]">Location Details</h1>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }} </p>
   <p class="text-center text-3xl" v-else-if="loading && !error">Loading...</p>
   <div v-else>
-    <h1 class="text-center text-3xl">Location Details</h1>
 
       <div class="c grid grid-cols-3 gap-5 text-white text-3xl">
         <div v-for="location in result.locations.results" :key="location.id">

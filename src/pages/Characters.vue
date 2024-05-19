@@ -43,45 +43,71 @@ const { result, loading, error } = useQuery(characterResult);
 </script>
 
 <template>
-  <h1 class="text-center text-3xl">Character Details</h1>
+  <h1 class="text-center text-3xl m-[20px] font-bold italic">
+    Character Details
+  </h1>
   <p v-if="error">
     Something went wrong... <span>error: {{ error.message }}</span>
   </p>
   <p class="text-center text-3xl" v-if="loading">Loading...</p>
 
-  <div class="c grid grid-cols-3 gap-5" v-else>
-    <div class="whole" v-for="character in result.characters.results" :key="character.id">
-        <div class="flex justify-between">
+  <div class="c" v-else>
+    <div
+      class="whole"
+      v-for="character in result.characters.results"
+      :key="character.id"
+    >
+        <div
+        class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-around items-center flex-wrap"
+        >
           <img
-            :src="character.image"
-            alt="character image"
-            class="rounded-tl-lg rounded-bl-lg h-[250px] w-[300px]"
+            :src="`${character.image}`"
+            :alt="character.name"
+            class="rounded-tl-lg rounded-bl-lg w-[300px]"
           />
-          <div>      
-            <h1>{{ character.name }}</h1>
-            <h1>{{ character.status }}</h1>
-            <h1>{{ character.species }}</h1>
-            <h1>{{ character.gender }}</h1>
+          <ul class="pr-5 text-white text-3xl">
+            <li>
+              <p>
+                Name: <span> {{ character.name }}</span>
+              </p>
+              <p>
+                Status: <span> {{ character.status }}</span>
+              </p>
+              <p>
+                Species: <span>{{ character.species }}</span>
+              </p>
+              <p>
+                Gender: <span> {{ character.gender }}</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      <h1 class="text-center text-3xl m-[20px] font-bold italic">
+        Episodes Participated
+      </h1>
+      <div class="bg-slate-700 grid grid-cols-3 gap-5 p-5 text-white text-3xl">
+        <div v-for="episode in character.episode"
+            :key="episode.id">
+            <div class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5">
+              <ol>
+                <li>Name: <span>{{ episode.name }}</span></li>
+                <li>Air Date: <span>{{ episode.air_date }}</span></li>
+                <li>Episode: <span>{{ episode.episode }}</span></li>
+                <li>Created: <span>{{episode.created}}</span></li>
+            </ol>
           </div>
-      </div>
-      <div>
-        <h1>Episodes Participated</h1>
-        <ul>
-          <li v-for="episode in character.episode" :key="episode.id">
-            <h1>Name: {{ episode.name }}</h1>
-            <p>Air Date: {{ episode.air_date }}</p>
-            <p>Episode: {{ episode.episode }}</p>
-            <p>Created: {{ episode.created }}</p>
-          </li>
-        </ul>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-
-.whole {
-  background-color: red;
+span:hover {
+  font-style: italic;
+  color: orange;
+}
+span {
+  margin-left: 50px;
 }
 </style>

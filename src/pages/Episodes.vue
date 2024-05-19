@@ -12,7 +12,7 @@ const characterId = parseInt(route.params.id);
 console.log(route.params.id);
 
 const episodeResult = gql`
-  query Episodes{
+  query Episodes {
     episodes {
       results {
         id
@@ -30,69 +30,63 @@ const episodeResult = gql`
         }
       }
     }
-  }
-`;
+  }`;
 const { result, loading, error } = useQuery(episodeResult);
 </script>
-
 <template>
-   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
-    <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
+  <h1 class="text-center text-3xl m-[20px] font-bold">Episode Details</h1>
+  <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
+  <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
   <div v-else>
-   <h1 class="text-center text-3xl m-[20px]">Episode Details</h1>
-  <div class="container text-white text-3xl">
-   <div v-for="episode in result.episodes.results" :key="episode.id">
-    <div class="inner">
-      <h1>Name: {{ episode.name }}</h1>
-      <p>Air Date: {{ episode.air_date }}</p>
-      <p>Episode: {{ episode.episode }}</p>
-      <p>Created: {{ episode.created }}</p>
+      <div v-for="episode in result.episodes.results" :key="episode.id">
+        <div class=" bg-teal-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
+          <ul>
+            <li>Name: <span>{{ episode.name }}</span></li>
+            <li>Air Date: <span>{{ episode.air_date }}</span></li>
+            <li>Episode: <span>{{ episode.episode }}</span></li>
+            <li>Created: <span>{{ episode.created }}</span></li>
+          </ul>
+        </div>
+        <h3 class="text-center text-3xl m-[20px] font-bold italic">
+          Characters in this Episode
+        </h3>
+        <div class="bg-slate-700 grid grid-cols-3 gap-5 p-5 text-white text-3xl">
+          <div v-for="character in episode.characters" :key="character.id">
+            <div
+              class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-nowrap"
+            >
+              <img
+                :src="`${character.image}`"
+                :alt="character.name"
+                class="rounded-tl-lg rounded-bl-lg w-[250px]"
+              />
+              <ul class="pr-5">
+                <li>
+                  <p>
+                    Name: <span> {{ character.name }}</span>
+                  </p>
+                  <p>
+                    Status: <span> {{ character.status }}</span>
+                  </p>
+                  <p>
+                    Species: <span>{{ character.species }}</span>
+                  </p>
+                  <p>
+                    Gender: <span> {{ character.gender }}</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h2 class="text-center text-3xl m-[20px]">Characters in this Episode</h2> 
-    <div v-for="character in episode.characters" :key="character.id">
-      <div class="whole"> 
-        <img :src="`${character.image}`" :alt="character.name" class="w-[200px] h-[200px]">
-        <ul>
-          <li>
-            <p>Name:   <span> {{ character.name }}</span></p>
-            <p>Status:  <span> {{ character.status }}</span></p>
-            <p>Species:  <span>{{ character.species }}</span></p>
-            <p>Gender:   <span> {{ character.gender }}</span> </p>
-          </li>
-        </ul>
-     </div>
-    </div>
-  </div>
-</div>
-</div>
 </template>
 
 <style scoped>
 
-.container {
-  background-color: darkslategrey;
-}
-.inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: rgba(85, 107, 47, 0.343);
-  padding: 30px 0px;
-  font-style: italic;
-  line-height: 1.5;
-}
-
 span:hover {
-  color: rgba(245, 245, 245, 0.76);
+  color: orange;
   font-style: italic;
 }
-
-.whole {
- display: grid;
- grid-template-columns: repeat(3,1fr);
-}
-
-
 </style>

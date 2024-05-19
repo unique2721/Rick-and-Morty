@@ -5,7 +5,7 @@ import { RouterLink } from "vue-router";
 import EpisodeLists from "../homepageviews/EpisodeLists.vue";
 import CharacterList from "../homepageviews/CharacterLists.vue";
 import LocationList from "../homepageviews/LocationLists.vue";
-import Footer from "@/homepageviews/Footer.vue";
+import Footer from "@/pages/Footer.vue";
 
 /* carousels */
 import { Carousel, Slide } from "vue-carousel";
@@ -18,6 +18,7 @@ import { Location } from "graphql";
       <h1 class="text-center text-3xl p-7 font-bold">
         Welcome to <span>Rick and Morty</span>
       </h1>
+      <article class="">
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
         created by <strong>Justin Roiland</strong> and
@@ -48,6 +49,7 @@ import { Location } from "graphql";
         and Morty has become one of the most beloved and influential animated
         series of the 21st century.
       </p>
+    </article>
       <h1>
         created by: <strong>Justin Roiland</strong> and
         <strong>Dan Harmon</strong>
