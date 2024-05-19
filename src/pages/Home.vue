@@ -9,16 +9,15 @@ import Footer from "@/pages/Footer.vue";
 
 /* carousels */
 import { Carousel, Slide } from "vue-carousel";
-import { Location } from "graphql";
 /* carousel images */
 </script>
 <template>
   <div class="p-5 flex justify-between bg-yellow-50">
     <div>
       <h1 class="text-center text-3xl p-7 font-bold">
-        Welcome to <span>Rick and Morty</span>
+        Welcome to <span class="italic">Rick and Morty</span>
       </h1>
-      <article class="">
+      <article class="text-xl">
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
         created by <strong>Justin Roiland</strong> and
@@ -50,16 +49,16 @@ import { Location } from "graphql";
         series of the 21st century.
       </p>
     </article>
-      <h1>
-        created by: <strong>Justin Roiland</strong> and
-        <strong>Dan Harmon</strong>
-      </h1>
-      <h3>Genere: <strong>animated science fiction sitcom</strong></h3>
-      <h3>
-        Stars: <strong>Justin Roiland</strong> and <strong>Dan Harmon</strong>
-      </h3>
-      <h3>rating: <strong>9.1</strong> / <strong>10</strong></h3>
+    <div>
+      <ul class="text-3xl font-semibold my-10">
+        <li>Created by: <strong>Justin Roiland</strong> and <strong>Dan Harmon</strong> </li>
+        <li>Genere:<strong>animated science fiction sitcom</strong></li>
+        <li>Stars: <strong>Justin Roiland</strong> and <strong>Dan Harmon</strong></li>
+        <li>Rating: <strong>9.1</strong> / <strong>10</strong></li>
+      </ul>
     </div>
+    </div>
+    <!-- carousel -->
     <div>
       <img src="../images//logo.png" alt="" />
     </div>

@@ -16,4 +16,10 @@ import {RouterLink} from 'vue-router'
         </ul>
     </div>
 </template>
+<style scoped>
+li:hover {
+    color: rgba(240, 248, 255, 0.666);
+    font-style: italic;
+}
+</style>
 
