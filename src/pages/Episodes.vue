@@ -3,14 +3,13 @@
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-
+/* pages */
+import Footer from "./Footer.vue";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
-
 const characterId = parseInt(route.params.id);
 console.log(route.params.id);
-
 const episodeResult = gql`
   query Episodes {
     episodes {
@@ -30,7 +29,8 @@ const episodeResult = gql`
         }
       }
     }
-  }`;
+  }
+`;
 const { result, loading, error } = useQuery(episodeResult);
 </script>
 <template>
@@ -81,10 +81,9 @@ const { result, loading, error } = useQuery(episodeResult);
         </div>
       </div>
     </div>
+    <Footer/>
 </template>
-
 <style scoped>
-
 span:hover {
   color: orange;
   font-style: italic;

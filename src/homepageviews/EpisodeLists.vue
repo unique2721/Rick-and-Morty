@@ -3,9 +3,7 @@
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-
 /* episodes */
-
 const episodeResult = ref(gql`
  query Episodes{
   episodes {
@@ -17,7 +15,6 @@ const episodeResult = ref(gql`
  }
 `)
 const { result, loading, error } = useQuery(episodeResult);
-
 </script>
 <template>
   <!--  list of episodes  -->
@@ -37,7 +34,3 @@ const { result, loading, error } = useQuery(episodeResult);
   </div>
 </div>
 </template>
-
-<style scoped>
-
-</style>

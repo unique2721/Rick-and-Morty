@@ -3,7 +3,6 @@
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-
 /* characters */
 const characterResult = ref(gql`
   query Characters {
@@ -16,10 +15,8 @@ const characterResult = ref(gql`
     }
   }
 `);
-
 const { result, loading, error } = useQuery(characterResult);
 </script>
-
 <template>
     <!-- list of characters -->
     <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
@@ -44,6 +41,3 @@ const { result, loading, error } = useQuery(characterResult);
     </div>
     </div>
 </template>
-
-<style scoped>
-</style>

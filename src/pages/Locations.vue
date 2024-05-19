@@ -2,10 +2,11 @@
 import {ref} from 'vue'
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
+/* pages */
+import Footer from "./Footer.vue";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
-
 const locationId = parseInt(route.params.id);
 console.log(route.params.id);
 const locationResult = gql`
@@ -80,9 +81,5 @@ const { result, loading, error } = useQuery(locationResult);
       </div>
     </div>
   </div>
+  <Footer/>
 </template>
-
-<style scoped>
-
-
-</style>

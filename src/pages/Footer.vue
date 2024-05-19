@@ -1,17 +1,15 @@
-<script setup>
-
-</script>
-
 <template>
-
-<div>
-    <h1 class="text-center font-bold text-3xl">footer</h1>
+<div class=" bg-green-950 text-white py-5">
+    <h1 class="text-center font-bold text-3xl py-5 italic">Links</h1>
+    <div class="flex justify-center items-center">
+        <a href="https://github.com/unique2721/Rick-and-Morty" target="_blank" class="flex mr-10">
+            <h1 class="mr-2 text-2xl">Github: </h1>
+            <img src="../images/gitlogo.png" width="30px" height="30px" alt="git hub logo" class="rounded-full">
+        </a>
+          <a href="https://github.com/unique2721/Rick-and-Morty" target="_blank" class="flex">
+            <h1 class="text-3xl mr-2">Figma: </h1>
+            <img src="../images/figmalogo.png" width="40px" height="25px" alt="figma logo" class="rounded-full">
+        </a>
+    </div>
 </div>
-
 </template>
-
-
-<style>
-
-
-</style>

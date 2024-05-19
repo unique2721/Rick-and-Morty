@@ -3,7 +3,8 @@
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-
+/* pages */
+import Footer from "./Footer.vue";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
@@ -103,6 +104,7 @@ const { result, loading, error } = useQuery(characterResult);
       </div>
     </div>
   </div>
+  <Footer/>
 </template>
 
 <style scoped>

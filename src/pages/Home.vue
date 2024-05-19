@@ -73,4 +73,3 @@ import { Location } from "graphql";
   <Footer/>
 </template>
 
-<style scoped></style>

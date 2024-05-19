@@ -3,7 +3,6 @@
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-
 /* locations */
 const locationResult = ref(gql`
   query Locations {
@@ -18,10 +17,8 @@ const locationResult = ref(gql`
     }
   }
 `);
-
 const { result, loading, error } = useQuery(locationResult);
 </script>
-
 <template>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
   <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
@@ -38,9 +35,5 @@ const { result, loading, error } = useQuery(locationResult);
       </div>
     </div>
   </div>
-
 </template>
 
-<style scoped>
-
-</style>
