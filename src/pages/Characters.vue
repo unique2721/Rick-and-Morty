@@ -57,16 +57,18 @@ const { result, loading, error } = useQuery(characterResult);
       v-for="character in result.characters.results"
       :key="character.id"
     >
+
+    <div class="flex justify-center items-center bg-slate-950" >
         <div
-        class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-around items-center flex-wrap"
+        class="bg-slate-500 flex justify-between items-center flex-wrap "
         >
           <img
             :src="`${character.image}`"
             :alt="character.name"
             class="rounded-tl-lg rounded-bl-lg w-[300px]"
           />
-          <ul class="pr-5 text-white text-3xl">
-            <li>
+          <ul class=" text-white text-3xl">
+            <li class=" leading-10 ml-14">
               <p>
                 Name: <span> {{ character.name }}</span>
               </p>
@@ -81,6 +83,7 @@ const { result, loading, error } = useQuery(characterResult);
               </p>
             </li>
           </ul>
+        </div>
         </div>
       <h1 class="text-center text-3xl m-[20px] font-bold italic">
         Episodes Participated
