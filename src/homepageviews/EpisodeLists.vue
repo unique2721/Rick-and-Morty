@@ -26,7 +26,7 @@ const { result, loading, error } = useQuery(episodeResult);
     <div  v-else>
       <h1 class="text-center text-3xl m-[15px] font-bold">List of Episodes</h1>
       <div class="bg-slate-500 grid grid-cols-3 gap-5 p-5">
-        <div v-for="episode in result.episodes.results" :key="episode.id" class="ch">
+        <div v-for="episode in result.episodes.results" :key="episode.id">
         <RouterLink :to="`/episodes/${episode.id}`">
           <div class="hover:border-2 h-[220px] p-5 flex justify-evenly items-center rounded-xl text-slate-100 bg-slate-800 flex-wrap">
             <h1 class="text-3xl font-bold">Name:</h1> 

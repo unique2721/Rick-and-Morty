@@ -36,33 +36,31 @@ const { result, loading, error } = useQuery(episodeResult);
 </script>
 
 <template>
-  <p v-if="error">
-    Something went wrong... <span>error: {{ error.message }}</span>
-  </p>
-  <p class="text-center text-3xl" v-if="loading">Loading...</p>
+   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
+    <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
   <div v-else>
-   <h1 class="text-center text-3xl">Episode Details</h1>
-  <div class="c text-white text-3xl">
-   <div class="whole" v-for="episode in result.episodes.results" :key="episode.id">
-    <div class="flex justify-center items-center flex-wrap flex-col">
+   <h1 class="text-center text-3xl m-[20px]">Episode Details</h1>
+  <div class="container text-white text-3xl">
+   <div v-for="episode in result.episodes.results" :key="episode.id">
+    <div class="inner">
       <h1>Name: {{ episode.name }}</h1>
       <p>Air Date: {{ episode.air_date }}</p>
       <p>Episode: {{ episode.episode }}</p>
       <p>Created: {{ episode.created }}</p>
-      <h2>Characters in this Episode</h2> 
     </div>
-    <div class="grid grid-cols-3 gap-5"  v-for="character in episode.characters" :key="character.id">
-      <div class="flex justify-between items-center flex-wrap"> 
+    <h2 class="text-center text-3xl m-[20px]">Characters in this Episode</h2> 
+    <div v-for="character in episode.characters" :key="character.id">
+      <div class="whole"> 
         <img :src="`${character.image}`" :alt="character.name" class="w-[200px] h-[200px]">
         <ul>
           <li>
-            <p>Name: {{ character.name }}</p>
-            <p>Status: {{ character.status }}</p>
-            <p>Species: {{ character.species }}</p>
-            <p>Gender: {{ character.gender }}</p>
+            <p>Name:   <span> {{ character.name }}</span></p>
+            <p>Status:  <span> {{ character.status }}</span></p>
+            <p>Species:  <span>{{ character.species }}</span></p>
+            <p>Gender:   <span> {{ character.gender }}</span> </p>
           </li>
         </ul>
-    </div>
+     </div>
     </div>
   </div>
 </div>
@@ -70,12 +68,31 @@ const { result, loading, error } = useQuery(episodeResult);
 </template>
 
 <style scoped>
-.c {
+
+.container {
   background-color: darkslategrey;
+}
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: rgba(85, 107, 47, 0.343);
+  padding: 30px 0px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+span:hover {
+  color: rgba(245, 245, 245, 0.76);
+  font-style: italic;
 }
 
 .whole {
-  background-color: rgba(0, 0, 0, 0.734);
+ display: grid;
+ grid-template-columns: repeat(3,1fr);
 }
+
 
 </style>
