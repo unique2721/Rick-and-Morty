@@ -28,7 +28,7 @@ const router = createRouter({
             component: EpisodeLists,
             children: [
                 {
-                    path: '/:id',
+                    path: ':id',
                     name: 'Episodes',
                     component:Episodes
                 }

@@ -1,4 +1,5 @@
 <script setup>
+import { RouterView } from "vue-router";
 /* querying */
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
@@ -32,5 +33,6 @@ const { result, loading, error } = useQuery(episodeResult);
         </RouterLink>
     </div>
   </div>
+  <RouterView/>
 </div>
 </template>
