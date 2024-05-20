@@ -37,7 +37,7 @@ import { Carousel, Slide } from "vue-carousel";
         creativity, and emotional depth, as well as its exploration of
         existential themes and philosophical concepts.
       </p>
-      <ul class="text-3xl font-semibold my-10">
+      <ul class="text-3xl font-semibold my-10 md:text-center">
         <li>Created by: Justin Roiland and Dan Harmon </li>
         <li>Genere: animated science fiction sitcom</li>
         <li>Stars: Justin Roiland< and Dan Harmon</li>
