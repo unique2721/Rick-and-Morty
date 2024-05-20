@@ -1,4 +1,4 @@
-# my-project
+# Rick and Morty Tv Show
 
 #This is Rick amd morty Tv show  website designed by using vue3 composition api, tailwind as css and using apollo graphql as a server.
 #This website is totally responsive to all devices ranging from small devices to larg screens such as desktops.
