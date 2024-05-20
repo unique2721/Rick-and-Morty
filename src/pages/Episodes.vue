@@ -11,8 +11,8 @@ const route = useRoute();
 const episodeId = parseInt(route.params.id);
 console.log(episodeId);
 const episodeResult = gql`
-  query Episodes {
-    episodes {
+  query Episodes ($id: ID!) {
+    episodes (id: $id) {
       results {
         id
         name
@@ -30,7 +30,9 @@ const episodeResult = gql`
       }
     }
   }`;
-const { result, loading, error } = useQuery(episodeResult);
+const { result, loading, error } = useQuery(episodeResult, {
+  $id: {episodeId}
+});
 </script>
 <template>
   <h1 class="text-center text-3xl m-[20px] font-bold">Episode Details</h1>
