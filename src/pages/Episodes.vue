@@ -84,5 +84,6 @@ const { result, loading, error } = useQuery(episodeResult,{
 span:hover {
   color: orange;
   font-style: italic;
+  cursor: pointer;
 }
 </style>

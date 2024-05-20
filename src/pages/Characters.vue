@@ -103,6 +103,7 @@ const { result, loading, error } = useQuery(characterResult, {
 span:hover {
   font-style: italic;
   color: orange;
+  cursor: pointer;
 }
 span {
   margin-left: 50px;

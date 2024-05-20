@@ -82,5 +82,6 @@ const { result, loading, error } = useQuery(locationResult,{
 span:hover {
   color: orange;
   font-style: italic;
+  cursor: pointer;
 }
 </style>
