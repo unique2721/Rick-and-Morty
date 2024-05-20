@@ -9,6 +9,7 @@ import Characters from '../pages/Characters.vue'
 import EpisodeLists from "@/homepageviews/EpisodeLists.vue";
 import CharacterLists from "@/homepageviews/CharacterLists.vue";
 import LocationLists from "@/homepageviews/LocationLists.vue";
+/* detail views */
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,7 +41,7 @@ const router = createRouter({
             component: CharacterLists,
             children: [
                 {
-                    path: '/:id',
+                    path: ':id',
                     name: 'Characters',
                     component:Characters
                 }
@@ -52,7 +53,7 @@ const router = createRouter({
             component: LocationLists,
             children: [
                 {
-                    path: '/:id',
+                    path: ':id',
                     name: 'Locations',
                     component:Locations
                 }
