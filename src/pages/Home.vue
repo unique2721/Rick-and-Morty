@@ -17,7 +17,7 @@ import { Carousel, Slide } from "vue-carousel";
       <h1 class="text-center text-3xl p-7 font-bold">
         Welcome to <span class="italic">Rick and Morty</span>
       </h1>
-      <article class="text-xl">
+      <article class="text-2xl">
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
         created by <strong>Justin Roiland</strong> and
@@ -46,10 +46,10 @@ import { Carousel, Slide } from "vue-carousel";
     </article>
     <div>
       <ul class="text-3xl font-semibold my-10">
-        <li>Created by: <strong>Justin Roiland</strong> and <strong>Dan Harmon</strong> </li>
-        <li>Genere:<strong>animated science fiction sitcom</strong></li>
-        <li>Stars: <strong>Justin Roiland</strong> and <strong>Dan Harmon</strong></li>
-        <li>Rating: <strong>9.1</strong> / <strong>10</strong></li>
+        <li>Created by: Justin Roiland and Dan Harmon </li>
+        <li>Genere: animated science fiction sitcom</li>
+        <li>Stars: Justin Roiland< and Dan Harmon</li>
+        <li>Rating: 9.1 / 10</li>
       </ul>
     </div>
     </div>
