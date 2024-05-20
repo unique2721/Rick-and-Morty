@@ -12,8 +12,8 @@ const episodeId = ref(parseInt(route.params.id));
 
 console.log(episodeId);
 const episodeResult = gql`
-  query Episodes ($episodeId: ID!) {
-    episodes (id: $episodeId)  {
+  query Episodes {
+    episodes {
       results {
         id
         name
