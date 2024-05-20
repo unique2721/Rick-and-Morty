@@ -51,7 +51,7 @@ const { result, loading, error } = useQuery(characterResult, {
   </p>
   <p class="text-center text-3xl my-5"  v-if="loading">Loading...</p>
 
-  <div class="c" v-else>
+  <div v-else>
     <div class="flex justify-center items-center bg-slate-950" >
         <div
         class="bg-slate-500 flex justify-between items-center flex-wrap "
