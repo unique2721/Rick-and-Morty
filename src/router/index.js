@@ -43,8 +43,7 @@ const router = createRouter({
             
             path: '/characters/:id',
             name: 'Characters',
-            component:Characters
-               
+            component:Characters     
         },
         {
             path: '/locations',
