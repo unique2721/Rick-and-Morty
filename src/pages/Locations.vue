@@ -7,29 +7,29 @@ import Footer from "./Footer.vue";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
-const locationId = parseInt(route.params.id);
+const locationId = ref(parseInt(route.params.id));
 console.log(locationId);
 const locationResult = gql`
-    query {
-     locations {
-     results {
-       id
-       name
-       type
-       dimension
-       created
-       residents {
-         id
-         name
-         status
-         species
-         gender
-         image
-       }
-     }
-   }
- }`;
-const { result, loading, error } = useQuery(locationResult);
+    query Location ($id: ID!) {
+  location (id: $id) {
+    id
+    name
+    type
+    dimension
+    created
+    residents {
+      id
+      name
+      status
+      species
+      gender
+      image
+    }
+  }
+}`;
+const { result, loading, error } = useQuery(locationResult,{
+  id: locationId
+});
 </script>
 <template>
   <h1 class="text-center text-3xl font-bold m-[20px]">Location Details</h1>
@@ -37,20 +37,19 @@ const { result, loading, error } = useQuery(locationResult);
   <p class="text-center text-3xl my-5" v-else-if="loading && !error">Loading...</p>
   <div v-else>
     <div>
-        <div v-for="location in result.locations.results" :key="location.id">
             <div class=" bg-teal-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
               <ul>
-                <li>Name: <span>{{ location.name }}</span></li>
-                <li>Type: <span>{{ location.type }}</span></li>
-                <li>Dimension: <span>{{ location.dimension }}</span></li>
-                <li>Created: <span>{{ location.created }}</span></li>
+                <li>Name: <span>{{ result.location.name }}</span></li>
+                <li>Type: <span>{{ result.location.type }}</span></li>
+                <li>Dimension: <span>{{ result.location.dimension }}</span></li>
+                <li>Created: <span>{{ result.location.created }}</span></li>
               </ul> 
             </div>
             <h3 class="text-center text-3xl m-[20px] font-bold italic">
           Residents in this Location
         </h3>
         <div class="bg-slate-700 grid grid-cols-3 gap-5 p-5 text-white text-3xl">
-          <div v-for="resident in location.residents" :key="resident.id">
+          <div v-for="resident in result.location.residents" :key="resident.id">
             <div
               class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-nowrap"
             >
@@ -80,6 +79,5 @@ const { result, loading, error } = useQuery(locationResult);
         </div>
       </div>
     </div>
-  </div>
   <Footer/>
 </template>

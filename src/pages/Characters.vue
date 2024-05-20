@@ -15,7 +15,7 @@ const characterId = parseInt(route.params.id);
 console.log(characterId);
 
 const characterResult = gql`
-  query ($id: ID!) {
+  query Character ($id: ID!) {
   character (id: $id) {
     id
     name
