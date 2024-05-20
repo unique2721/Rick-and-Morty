@@ -10,6 +10,7 @@ import Footer from "@/pages/Footer.vue";
 /* carousels */
 import { Carousel, Slide } from "vue-carousel";
 /* carousel images */
+console.log(window.innerWidth)
 </script>
 <template>
   <div class="p-5 flex justify-between bg-yellow-50">
@@ -36,12 +37,6 @@ import { Carousel, Slide } from "vue-carousel";
         Rick and Morty has received critical acclaim for its originality,
         creativity, and emotional depth, as well as its exploration of
         existential themes and philosophical concepts.
-      </p>
-      <p>
-        The show has won numerous awards, including the Primetime Emmy Award for
-        Outstanding Animated Program, and has been praised by critics and
-        audiences alike for its groundbreaking approach to animation and
-        storytelling.
       </p>
     </article>
     <div>
