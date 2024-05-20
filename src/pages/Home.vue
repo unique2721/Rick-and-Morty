@@ -10,7 +10,6 @@ import Footer from "@/pages/Footer.vue";
 /* carousels */
 import { Carousel, Slide } from "vue-carousel";
 /* carousel images */
-console.log(window.innerWidth)
 </script>
 <template>
   <div class="p-5 flex sm:flex-col md:flex-col lg:flex-row justify-between bg-yellow-50">

@@ -1,3 +1,6 @@
+  <script setup>
+  import { Carousel, Slide } from 'vue-carousel';
+  </script>
 <template>
     <div>
       <carousel :autoplay="true" :autoplay-timeout="3000"> <!-- Set autoplay to true and specify autoplay timeout -->
@@ -8,7 +11,4 @@
     </div>
   </template>
   
-  <script setup>
-  import { Carousel, Slide } from 'vue-carousel';
-  </script>
   
