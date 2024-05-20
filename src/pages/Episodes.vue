@@ -31,7 +31,7 @@ const episodeResult = gql`
     }
   }`;
 const { result, loading, error } = useQuery(episodeResult, {
-  "id": {episodeId}
+  id: {episodeId}
 });
 </script>
 <template>
