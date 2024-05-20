@@ -31,8 +31,29 @@ const episodeResult = gql`
     }
   }`;
 const { result, loading, error } = useQuery(episodeResult,{
-  id: {episodeId}
+   id: {episodeId}
 });
+
+/* query Episodes ($id: ID!) {
+  episode (id: $id) {
+    id
+    name
+    air_date
+    episode
+    created
+    characters {
+      name
+      status
+      species
+      gender
+      image
+    }
+  }
+}
+  {
+  "id": 2
+} */
+
 </script>
 <template>
   <h1 class="text-center text-3xl m-[20px] font-bold">Episode Details</h1>
