@@ -5,8 +5,8 @@ import { RouterLink } from "vue-router";
 import EpisodeLists from "../homepageviews/EpisodeLists.vue";
 import CharacterList from "../homepageviews/CharacterLists.vue";
 import LocationList from "../homepageviews/LocationLists.vue";
+/* pages */
 import Footer from "@/pages/Footer.vue";
-
 /* carousels */
 import { Carousel, Slide } from "vue-carousel";
 /* carousel images */

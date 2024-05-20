@@ -1,5 +1,4 @@
 <script setup>
-/* query only needed data here */
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
@@ -12,8 +11,7 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const characterId = parseInt(route.params.id);
 
-console.log(characterId);
-
+/* query only needed data here */
 const characterResult = gql`
   query Character ($id: ID!) {
   character (id: $id) {
@@ -39,11 +37,12 @@ const characterResult = gql`
   }
 }`;
 const { result, loading, error } = useQuery(characterResult, {
-  id: characterId
+  id: characterId//pass that id variable dynamically
 });
 </script>
 
 <template>
+  <!-- details of each character -->
   <h1 class="text-center text-3xl m-[20px] font-bold italic">
     Character Details
   </h1>
@@ -100,7 +99,6 @@ const { result, loading, error } = useQuery(characterResult, {
   <RouterView/>
   <Footer/>
 </template>
-
 <style scoped>
 span:hover {
   font-style: italic;

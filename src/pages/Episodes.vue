@@ -1,5 +1,4 @@
 <script setup>
-/* query only needed data here */
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
@@ -9,7 +8,7 @@ import Footer from "./Footer.vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 const episodeId = ref(parseInt(route.params.id));
-
+/* query only needed data here */
 const episodeResult = gql`
 query Episode ($id: ID!) {
   episode (id: $id) {
@@ -33,6 +32,7 @@ const { result, loading, error } = useQuery(episodeResult,{
 });
 </script>
 <template>
+  <!-- details information about each episode -->
   <h1 class="text-center text-3xl m-[20px] font-bold">Episode Details</h1>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
   <p v-if="loading && !error" class="text-center text-3xl my-5">Loading...</p>
