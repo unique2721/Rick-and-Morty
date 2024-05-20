@@ -1,3 +1,9 @@
+<script setup>
+const apologise = () => {
+    window.alert('Sorry for the inconvenience that I did not design a figma design. Trust me I will design it until next week. Thank you for patience and support!')
+}
+</script>
+
 <template>
 <div class=" bg-green-950 text-white py-5 scroll-smooth">
     <h1 class="text-center font-bold text-3xl py-5 italic">Links</h1>
@@ -6,10 +12,10 @@
             <h1 class="mr-2 text-2xl">Github: </h1>
             <img src="../images/gitlogo.png" width="30px" height="30px" alt="git hub logo" class="rounded-full">
         </a>
-          <a href="https://github.com/unique2721/Rick-and-Morty" target="_blank" class="flex">
+          <p @click="apologise" href="https://github.com/unique2721/Rick-and-Morty" target="_blank" class="flex cursor-pointer">
             <h1 class="text-3xl mr-2">Figma: </h1>
             <img src="../images/figmalogo.png" width="40px" height="25px" alt="figma logo" class="rounded-full">
-        </a>
+          </p>
     </div>
 </div>
 </template>
