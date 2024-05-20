@@ -7,11 +7,12 @@ import gql from "graphql-tag";
 import Footer from "./Footer.vue";
 /* routing */
 import { RouterView } from "vue-router";
+/* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
-
 const characterId = parseInt(route.params.id);
-console.log(route.params.id);
+
+console.log(characterId);
 
 const characterResult = gql`
   query Characters {

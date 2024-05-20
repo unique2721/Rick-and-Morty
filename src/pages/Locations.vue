@@ -8,7 +8,7 @@ import Footer from "./Footer.vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 const locationId = parseInt(route.params.id);
-console.log(route.params.id);
+console.log(locationId);
 const locationResult = gql`
     query {
      locations {

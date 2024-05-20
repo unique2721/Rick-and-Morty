@@ -39,5 +39,6 @@ const { result, loading, error } = useQuery(characterResult);
         </RouterLink>
       </div>
     </div>
+      <RouterView/>
     </div>
 </template>

@@ -34,6 +34,7 @@ const { result, loading, error } = useQuery(locationResult);
         </RouterLink>
       </div>
     </div>
+      <RouterView/>
   </div>
 </template>
 
