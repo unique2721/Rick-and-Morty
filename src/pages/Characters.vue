@@ -15,34 +15,32 @@ const characterId = parseInt(route.params.id);
 console.log(characterId);
 
 const characterResult = gql`
-  query Characters {
-    characters {
-      results {
-        id
-        name
-        status
-        species
-        gender
-        image
-        episode {
-          id
-          name
-          air_date
-          episode
-          created
-        }
-        location {
-          id
-          name
-          type
-          dimension
-        }
-      }
+  query ($id: ID!) {
+  character (id: $id) {
+    id
+    name
+    status
+    species
+    species
+    image
+    episode {
+      id
+      name
+      air_date
+      episode 
+      created
+    }
+    location {
+      id
+      name
+      type
+      dimension
     }
   }
-`;
-
-const { result, loading, error } = useQuery(characterResult);
+}`;
+const { result, loading, error } = useQuery(characterResult, {
+  id: characterId
+});
 </script>
 
 <template>
@@ -55,12 +53,6 @@ const { result, loading, error } = useQuery(characterResult);
   <p class="text-center text-3xl my-5"  v-if="loading">Loading...</p>
 
   <div class="c" v-else>
-    <div
-      class="whole"
-      v-for="character in result.characters.results"
-      :key="character.id"
-    >
-
     <div class="flex justify-center items-center bg-slate-950" >
         <div
         class="bg-slate-500 flex justify-between items-center flex-wrap "
@@ -105,7 +97,6 @@ const { result, loading, error } = useQuery(characterResult);
         </div>
       </div>
     </div>
-  </div>
   <RouterView/>
   <Footer/>
 </template>

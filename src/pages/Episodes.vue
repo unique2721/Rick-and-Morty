@@ -10,30 +10,8 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const episodeId = ref(parseInt(route.params.id));
 
-console.log(episodeId);
 const episodeResult = gql`
-  query Episodes {
-    episodes {
-      results {
-        id
-        name
-        air_date
-        episode
-        created
-        characters {
-          id
-          name
-          status
-          species
-          gender
-          image
-        }
-      }
-    }
-  }`;
-const { result, loading, error } = useQuery(episodeResult);
-
-/* query Episode ($id: ID!) {
+query Episode ($id: ID!) {
   episode (id: $id) {
     id
     name
@@ -41,6 +19,7 @@ const { result, loading, error } = useQuery(episodeResult);
     episode
     created
     characters {
+      id
       name
       status
       species
@@ -48,31 +27,29 @@ const { result, loading, error } = useQuery(episodeResult);
       image
     }
   }
-}
-  {
-  "id": 2
-} */
-
+}`
+const { result, loading, error } = useQuery(episodeResult,{
+  id: episodeId
+});
 </script>
 <template>
   <h1 class="text-center text-3xl m-[20px] font-bold">Episode Details</h1>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
   <p v-if="loading && !error" class="text-center text-3xl my-5">Loading...</p>
-  <div v-else>
-      <div v-for="episode in result.episodes.results" :key="episode.id">
+  <div v-else> 
         <div class=" bg-teal-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
           <ul>
-            <li>Name: <span>{{ episode.name }}</span></li>
-            <li>Air Date: <span>{{ episode.air_date }}</span></li>
-            <li>Episode: <span>{{ episode.episode }}</span></li>
-            <li>Created: <span>{{ episode.created }}</span></li>
+            <li>Name: <span>{{ result.episode.name }}</span></li>
+            <li>Air Date: <span>{{ result.episode.air_date }}</span></li>
+            <li>Episode: <span>{{ result.episode.episode }}</span></li>
+            <li>Created: <span>{{ result.episode.created }}</span></li>
           </ul>
         </div>
         <h3 class="text-center text-3xl m-[20px] font-bold italic">
           Characters in this Episode
         </h3>
         <div class="bg-slate-700 grid grid-cols-3 gap-5 p-5 text-white text-3xl">
-          <div v-for="character in episode.characters" :key="character.id">
+          <div v-for="character in result.episode.characters" :key="character.id">
             <div
               class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-nowrap"
             >
@@ -101,7 +78,6 @@ const { result, loading, error } = useQuery(episodeResult);
           </div>
         </div>
       </div>
-    </div>
     <Footer/>
 </template>
 <style scoped>
