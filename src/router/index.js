@@ -7,9 +7,9 @@ import Locations from '../pages/Locations.vue'
 import Characters from '../pages/Characters.vue'
 import PageNotFound from '../pages/PageNotFound.vue'
 /* homepage lists */
-import EpisodeLists from "@/homepageviews/EpisodeLists.vue";
-import CharacterLists from "@/homepageviews/CharacterLists.vue";
-import LocationLists from "@/homepageviews/LocationLists.vue";
+import EpisodeLists from "@/components/EpisodeLists.vue";
+import CharacterLists from "@/components/CharacterLists.vue";
+import LocationLists from "@/components/LocationLists.vue";
 /* detail views */
 
 const router = createRouter({

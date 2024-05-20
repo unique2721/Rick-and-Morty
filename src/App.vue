@@ -2,7 +2,7 @@
 /* routing */
 import { RouterView } from "vue-router";
 /* pages */
-import NavBar from "./pages/NavBar.vue";
+import NavBar from "./components/NavBar.vue";
 </script>
 <template>
   <div>

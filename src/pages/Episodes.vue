@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 /* pages */
-import Footer from "./Footer.vue";
+import Footer from "../components/Footer.vue";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();

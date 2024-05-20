@@ -2,11 +2,11 @@
 /* routing */
 import { RouterLink } from "vue-router";
 /* home page views */
-import EpisodeLists from "../homepageviews/EpisodeLists.vue";
-import CharacterList from "../homepageviews/CharacterLists.vue";
-import LocationList from "../homepageviews/LocationLists.vue";
+import EpisodeLists from "../components/EpisodeLists.vue";
+import CharacterList from "../components/CharacterLists.vue";
+import LocationList from "../components/LocationLists.vue";
 /* pages */
-import Footer from "@/pages/Footer.vue";
+import Footer from "@/components/Footer.vue";
 /* carousels */
 import { Carousel, Slide } from "vue-carousel";
 /* carousel images */
