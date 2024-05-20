@@ -13,8 +13,7 @@ const episodeResult = ref(gql`
       name
     }
   }
- }
-`)
+ }`)
 const { result, loading, error } = useQuery(episodeResult);
 </script>
 <template>

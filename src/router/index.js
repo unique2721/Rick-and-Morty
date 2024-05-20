@@ -51,7 +51,7 @@ const router = createRouter({
             component: LocationLists,
         },
         {
-            path: '/locaions/:id',
+            path: '/locations/:id',
             name: 'Locations',
             component:Locations
         }
