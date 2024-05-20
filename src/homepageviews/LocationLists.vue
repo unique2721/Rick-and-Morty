@@ -15,8 +15,7 @@ const locationResult = ref(gql`
         created
       }
     }
-  }
-`);
+  }`);
 const { result, loading, error } = useQuery(locationResult);
 </script>
 <template>
