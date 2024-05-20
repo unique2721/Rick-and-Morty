@@ -9,7 +9,7 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const locationId = ref(parseInt(route.params.id));
 /* query only needed data here */
-const locationResult = gql`
+const locationResult = ref(gql`
     query Location ($id: ID!) {
   location (id: $id) {
     id
@@ -26,7 +26,7 @@ const locationResult = gql`
       image
     }
   }
-}`;
+}`);
 const { result, loading, error } = useQuery(locationResult,{
   id: locationId //pass id variable
 });
