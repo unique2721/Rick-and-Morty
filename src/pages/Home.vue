@@ -13,7 +13,7 @@ import { Carousel, Slide } from "vue-carousel";
 console.log(window.innerWidth)
 </script>
 <template>
-  <div class="p-5 flex justify-between bg-yellow-50">
+  <div class="p-5 flex sm:flex-col md:flex-col lg:flex-row justify-between bg-yellow-50">
     <div>
       <h1 class="text-center text-3xl p-7 font-bold">
         Welcome to <span class="italic">Rick and Morty</span>
