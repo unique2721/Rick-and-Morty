@@ -23,7 +23,7 @@ const { result, loading, error } = useQuery(characterResult);
     <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
     <div v-else>
     <h1 class="font-bold m-[15px] text-center text-3xl">List of Characters</h1>
-    <div class="bg-slate-900 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
+    <div class="bg-slate-700 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
       <div v-for="character in result.characters.results" :key="character.id">
         <RouterLink :to="`/characters/${character.id}`">
           <div class="hover:border-2 shadow-xl border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap italic">
