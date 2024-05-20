@@ -1,30 +1,6 @@
 # my-project
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-"# Rick-and-Morty" 
+#This is Rick amd morty Tv show  website designed by using vue3 composition api, tailwind as css and using apollo graphql as a server.
+#This website is totally responsive to all devices ranging from small devices to larg screens such as desktops.
+#this  has navigation bar where users can filter based on their preference to see information about
+# use routing system to navigate to desired pages briefly

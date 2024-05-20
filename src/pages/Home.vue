@@ -8,7 +8,6 @@ import LocationList from "../components/LocationLists.vue";
 import Footer from "@/components/Footer.vue";
 /* carousels */
 import Carousels from '../components/Carousels.vue'
-import { Carousel, Slide } from "vue-carousel";
 /* carousel images */
 </script>
 <template>

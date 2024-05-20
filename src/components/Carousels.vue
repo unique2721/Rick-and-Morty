@@ -1,12 +1,12 @@
 <script setup>
 import img from '../images/logo.png';
 import { ref } from 'vue';
-import { Carousel, Slide } from 'vue-carousel';
+import { Carousel, Slide } from 'vue3-carousel';
 
 </script>
 
 <template>
     <div>
-        <img src="https://rickandmortyapi.com/api/character/avatar/5.jpeg" alt="" class="rounded-lg mx-2 sm:h-[300px] sm:w-[1000px] md:h-[400px] lg:w-[2000px] lg:h-[475px] xl:h-[500px] xl:w-[3000px]">
+        <img src="https://rickandmortyapi.com/api/character/avatar/5.jpeg" alt="" class="rounded-lg mx-2 sm:h-[300px] sm:w-[1000px] md:h-[400px] lg:w-[2000px] lg:h-[475px] xl:h-[500px] xl:w-[3000px]"> 
     </div>
 </template>
