@@ -6,7 +6,6 @@ import {RouterLink} from 'vue-router'
     <div class="flex justify-between items-center flex-wrap sticky top-0 z-10 bg-slate-600 text-white">
         <img src="../images/logo.png" alt="Rick and morty logo" class=" h-20 italic ml-[20px]">
         <div class="flex justify-center items-center m-[20px]">
-        <input class="p-[5px] border-4 rounded-md text-black" type="text" placeholder="search by name"  />
         </div>
         <ul class="flex p-[10px]">
             <li class=" px-10 text-xl"><RouterLink active-class="active" to="/">Home</RouterLink></li>
