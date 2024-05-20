@@ -34,7 +34,7 @@ const { result, loading, error } = useQuery(locationResult);
 <template>
   <h1 class="text-center text-3xl font-bold m-[20px]">Location Details</h1>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }} </p>
-  <p class="text-center text-3xl" v-else-if="loading && !error">Loading...</p>
+  <p class="text-center text-3xl my-5" v-else-if="loading && !error">Loading...</p>
   <div v-else>
     <div>
         <div v-for="location in result.locations.results" :key="location.id">

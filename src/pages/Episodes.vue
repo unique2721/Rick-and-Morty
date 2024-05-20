@@ -8,8 +8,8 @@ import Footer from "./Footer.vue";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
-const characterId = parseInt(route.params.id);
-console.log(route.params.id);
+const episodeId = parseInt(route.params.id);
+console.log(episodeId);
 const episodeResult = gql`
   query Episodes {
     episodes {
@@ -29,14 +29,13 @@ const episodeResult = gql`
         }
       }
     }
-  }
-`;
+  }`;
 const { result, loading, error } = useQuery(episodeResult);
 </script>
 <template>
   <h1 class="text-center text-3xl m-[20px] font-bold">Episode Details</h1>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
-  <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
+  <p v-if="loading && !error" class="text-center text-3xl my-5">Loading...</p>
   <div v-else>
       <div v-for="episode in result.episodes.results" :key="episode.id">
         <div class=" bg-teal-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">

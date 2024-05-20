@@ -5,7 +5,8 @@ import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 /* pages */
 import Footer from "./Footer.vue";
-/* route information */
+/* routing */
+import { RouterView } from "vue-router";
 import { useRoute } from "vue-router";
 const route = useRoute();
 
@@ -50,7 +51,7 @@ const { result, loading, error } = useQuery(characterResult);
   <p v-if="error">
     Something went wrong... <span>error: {{ error.message }}</span>
   </p>
-  <p class="text-center text-3xl" v-if="loading">Loading...</p>
+  <p class="text-center text-3xl my-5"  v-if="loading">Loading...</p>
 
   <div class="c" v-else>
     <div
@@ -104,6 +105,7 @@ const { result, loading, error } = useQuery(characterResult);
       </div>
     </div>
   </div>
+  <RouterView/>
   <Footer/>
 </template>
 

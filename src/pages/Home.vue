@@ -43,11 +43,6 @@ import { Carousel, Slide } from "vue-carousel";
         audiences alike for its groundbreaking approach to animation and
         storytelling.
       </p>
-      <p>
-        With its eclectic mix of humor, wit, and thought-provoking ideas, Rick
-        and Morty has become one of the most beloved and influential animated
-        series of the 21st century.
-      </p>
     </article>
     <div>
       <ul class="text-3xl font-semibold my-10">

@@ -24,34 +24,40 @@ const router = createRouter({
         },
         {
             path: '/episodes',
-            name: 'Episodes',
-            component: Episodes,
+            name: 'EpisodeLists',
+            component: EpisodeLists,
+            children: [
+                {
+                    path: '/:id',
+                    name: 'Episodes',
+                    component:Episodes
+                }
+            ]
         },
         {
             path: '/characters',
-            name: 'Characters',
-            component: Characters,
+            name: 'CharacterLists',
+            component: CharacterLists,
+            children: [
+                {
+                    path: '/:id',
+                    name: 'Characters',
+                    component:Characters
+                }
+            ]
         },
         {
             path: '/locations',
-            name: 'Locations',
-            component: Locations
-        },
-        //  {
-        //     path: '/episodes/:id',
-        //     name: 'Episodesview',
-        //     component: 
-        // },
-        //  {
-        //     path: '/characters/:id',
-        //     name: 'Episodesview',
-        //     component: 
-        // },
-        //  {
-        //     path: '/locations/:id',
-        //     name: 'LocationsView',
-        //     component: 
-        // }
+            name: 'LocationLists',
+            component: LocationLists,
+            children: [
+                {
+                    path: '/:id',
+                    name: 'Locations',
+                    component:Locations
+                }
+            ]
+        }
     ]
 })
 
