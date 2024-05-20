@@ -19,10 +19,10 @@ const locationResult = ref(gql`
 const { result, loading, error } = useQuery(locationResult);
 </script>
 <template>
-    <h1 class=" h1 text-center text-3xl m-[15px] font-bold">List of Locations</h1>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
   <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
   <div  v-else>
+    <h1 class=" h1 text-center text-3xl m-[15px] font-bold">List of Locations</h1>
     <div class="bg-slate-500 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
       <div v-for="location in result.locations.results" :key="location.id">
         <RouterLink :to="`/locations/${location.id}`">
