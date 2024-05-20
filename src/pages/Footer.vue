@@ -1,5 +1,5 @@
 <template>
-<div class=" bg-green-950 text-white py-5">
+<div class=" bg-green-950 text-white py-5 scroll-smooth">
     <h1 class="text-center font-bold text-3xl py-5 italic">Links</h1>
     <div class="flex justify-center items-center">
         <a href="https://github.com/unique2721/Rick-and-Morty" target="_blank" class="flex mr-10">
