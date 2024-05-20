@@ -23,7 +23,7 @@ const { result, loading, error } = useQuery(locationResult);
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
   <p v-if="loading && !error" class="text-center text-3xl">Loading...</p>
   <div  v-else>
-    <div class="bg-slate-500 grid grid-cols-3 gap-5 p-5">
+    <div class="bg-slate-500 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
       <div v-for="location in result.locations.results" :key="location.id">
         <RouterLink :to="`/locations/${location.id}`">
             <div class="hover:border-2 h-[200px] p-1.5 flex justify-evenly items-center rounded-xl text-slate-100 bg-gray-950 flex-wrap">
