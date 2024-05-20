@@ -5,6 +5,7 @@ import Home from '../pages/Home.vue'
 import Episodes from '../pages/Episodes.vue'
 import Locations from '../pages/Locations.vue'
 import Characters from '../pages/Characters.vue'
+import PageNotFound from '../pages/PageNotFound.vue'
 /* homepage lists */
 import EpisodeLists from "@/homepageviews/EpisodeLists.vue";
 import CharacterLists from "@/homepageviews/CharacterLists.vue";
@@ -31,7 +32,7 @@ const router = createRouter({
         {
             path: '/episodes/:id',
             name: 'Episodes',
-            component:Episodes
+            component:Episodes,
         },
         {
             path: '/characters',
@@ -54,6 +55,11 @@ const router = createRouter({
             path: '/locations/:id',
             name: 'Locations',
             component:Locations
+        },
+        {
+            path: '/:catchall(.*)*',
+            name: 'PageNotFound',
+            component: PageNotFound
         }
     ]
 })
