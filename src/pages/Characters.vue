@@ -58,23 +58,23 @@ const { result, loading, error } = useQuery(characterResult, {
         class="bg-slate-500 flex justify-between items-center flex-wrap "
         >
           <img
-            :src="`${character.image}`"
-            :alt="character.name"
+            :src="`${result.character.image}`"
+            :alt="result.character.name"
             class="rounded-tl-lg rounded-bl-lg w-[300px]"
           />
           <ul class=" text-white text-3xl">
             <li class=" leading-10 ml-14">
               <p>
-                Name: <span> {{ character.name }}</span>
+                Name: <span> {{ result.character.name }}</span>
               </p>
               <p>
-                Status: <span> {{ character.status }}</span>
+                Status: <span> {{ result.character.status }}</span>
               </p>
               <p>
-                Species: <span>{{ character.species }}</span>
+                Species: <span>{{ result.character.species }}</span>
               </p>
               <p>
-                Gender: <span> {{ character.gender }}</span>
+                Gender: <span> {{ result.character.gender }}</span>
               </p>
             </li>
           </ul>
@@ -84,7 +84,7 @@ const { result, loading, error } = useQuery(characterResult, {
         Episodes Participated
       </h1>
       <div class="bg-slate-700 grid grid-cols-3 gap-5 p-5 text-white text-3xl">
-        <div v-for="episode in character.episode"
+        <div v-for="episode in result.character.episode"
             :key="episode.id">
             <div class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5">
               <ol>
