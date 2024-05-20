@@ -1,4 +1,3 @@
-/* DEFINING OUR ROUTING RULES */
 import { createRouter,createWebHistory } from "vue-router";
 /* pages */
 import Home from '../pages/Home.vue'
@@ -6,12 +5,12 @@ import Episodes from '../pages/Episodes.vue'
 import Locations from '../pages/Locations.vue'
 import Characters from '../pages/Characters.vue'
 import PageNotFound from '../pages/PageNotFound.vue'
-/* homepage lists */
+/* components */
 import EpisodeLists from "@/components/EpisodeLists.vue";
 import CharacterLists from "@/components/CharacterLists.vue";
 import LocationLists from "@/components/LocationLists.vue";
-/* detail views */
 
+/* DEFINING OUR ROUTING RULES */
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [

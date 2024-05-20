@@ -1,11 +1,10 @@
 <script setup>
 /* routing */
 import { RouterLink } from "vue-router";
-/* home page views */
+/* components */
 import EpisodeLists from "../components/EpisodeLists.vue";
 import CharacterList from "../components/CharacterLists.vue";
 import LocationList from "../components/LocationLists.vue";
-/* pages */
 import Footer from "@/components/Footer.vue";
 /* carousels */
 import Carousels from '../components/Carousels.vue'

@@ -1,7 +1,7 @@
 <script setup>
 /* routing */
 import { RouterView } from "vue-router";
-/* pages */
+/* components */
 import NavBar from "./components/NavBar.vue";
 </script>
 <template>

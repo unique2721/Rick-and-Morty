@@ -3,7 +3,6 @@ const apologise = () => {
     window.alert('Sorry for the inconvenience that I did not design a figma. Trust me I will design it until next week. Thank you for your patience and support!')
 }
 </script>
-
 <template>
 <div class=" bg-green-950 text-white py-5 scroll-smooth">
     <h1 class="text-center font-bold text-3xl py-5 italic">Links</h1>

@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-/* pages */
+/* components */
 import Footer from "../components/Footer.vue";
 /* routing */
 import { RouterView } from "vue-router";
