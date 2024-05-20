@@ -78,3 +78,9 @@ const { result, loading, error } = useQuery(locationResult,{
       </div>
   <Footer/>
 </template>
+<style scoped>
+span:hover {
+  color: orange;
+  font-style: italic;
+}
+</style>
