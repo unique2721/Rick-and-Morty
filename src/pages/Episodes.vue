@@ -34,7 +34,7 @@ const { result, loading, error } = useQuery(episodeResult,{
    id: {episodeId}
 });
 
-/* query Episodes ($id: ID!) {
+/* query Episode ($id: ID!) {
   episode (id: $id) {
     id
     name
