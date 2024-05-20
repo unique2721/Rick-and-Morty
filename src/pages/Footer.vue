@@ -1,6 +1,6 @@
 <script setup>
 const apologise = () => {
-    window.alert('Sorry for the inconvenience that I did not design a figma design. Trust me I will design it until next week. Thank you for patience and support!')
+    window.alert('Sorry for the inconvenience that I did not design a figma design. Trust me I will design it until next week. Thank you for your patience and support!')
 }
 </script>
 
