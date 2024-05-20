@@ -8,7 +8,5 @@ import { Carousel, Slide } from 'vue-carousel';
 <template>
     <div>
         <img src="https://rickandmortyapi.com/api/character/avatar/5.jpeg" alt="" class="rounded-lg mx-2 sm:h-[300px] sm:w-[1000px] md:h-[400px] lg:w-[2000px] lg:h-[475px] xl:h-[500px] xl:w-[3000px]">
-        <img :src="img" alt="">
-      
     </div>
 </template>
