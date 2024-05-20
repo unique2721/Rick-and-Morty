@@ -8,7 +8,8 @@ import Footer from "./Footer.vue";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
-const episodeId = parseInt(route.params.id);
+const episodeId = ref(parseInt(route.params.id));
+
 console.log(episodeId);
 const episodeResult = gql`
   query Episodes ($episodeId: ID!) {
@@ -30,9 +31,7 @@ const episodeResult = gql`
       }
     }
   }`;
-const { result, loading, error } = useQuery(episodeResult,{
-   id: {episodeId}
-});
+const { result, loading, error } = useQuery(episodeResult);
 
 /* query Episode ($id: ID!) {
   episode (id: $id) {
