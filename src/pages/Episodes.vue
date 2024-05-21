@@ -39,10 +39,10 @@ const { result, loading, error } = useQuery(episodeResult,{
   <div v-else> 
         <div class=" bg-teal-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
           <ul>
-            <li>Name: <span>{{ result.episode.name }}</span></li>
-            <li>Air Date: <span>{{ result.episode.air_date }}</span></li>
-            <li>Episode: <span>{{ result.episode.episode }}</span></li>
-            <li>Created: <span>{{ result.episode.created }}</span></li>
+            <li>Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.name }}</span></li>
+            <li>Air Date: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.air_date }}</span></li>
+            <li>Episode: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.episode }}</span></li>
+            <li>Created: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.created }}</span></li>
           </ul>
         </div>
         <h3 class="text-center text-3xl m-[20px] font-bold italic">
@@ -61,16 +61,16 @@ const { result, loading, error } = useQuery(episodeResult,{
               <ul class="pr-5">
                 <li>
                   <p>
-                    Name: <span> {{ character.name }}</span>
+                    Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ character.name }}</span>
                   </p>
                   <p>
-                    Status: <span> {{ character.status }}</span>
+                    Status: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ character.status }}</span>
                   </p>
                   <p>
-                    Species: <span>{{ character.species }}</span>
+                    Species: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ character.species }}</span>
                   </p>
                   <p>
-                    Gender: <span> {{ character.gender }}</span>
+                    Gender: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ character.gender }}</span>
                   </p>
                 </li>
               </ul>
@@ -80,10 +80,4 @@ const { result, loading, error } = useQuery(episodeResult,{
       </div>
     <Footer/>
 </template>
-<style scoped>
-span:hover {
-  color: orange;
-  font-style: italic;
-  cursor: pointer;
-}
-</style>
+

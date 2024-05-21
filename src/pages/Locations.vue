@@ -39,10 +39,10 @@ const { result, loading, error } = useQuery(locationResult,{
   <div v-else>
             <div class=" bg-teal-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
               <ul>
-                <li>Name: <span>{{ result.location.name }}</span></li>
-                <li>Type: <span>{{ result.location.type }}</span></li>
-                <li>Dimension: <span>{{ result.location.dimension }}</span></li>
-                <li>Created: <span>{{ result.location.created }}</span></li>
+                <li>Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.name }}</span></li>
+                <li>Type: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.type }}</span></li>
+                <li>Dimension: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.dimension }}</span></li>
+                <li>Created: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.created }}</span></li>
               </ul> 
             </div>
             <h3 class="text-center text-3xl m-[20px] font-bold italic">Residents in this Location</h3>
@@ -59,16 +59,16 @@ const { result, loading, error } = useQuery(locationResult,{
               <ul class="pr-5">
                 <li>
                   <p>
-                    Name: <span> {{ resident.name }}</span>
+                    Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ resident.name }}</span>
                   </p>
                   <p>
-                    Status: <span> {{ resident.status }}</span>
+                    Status: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ resident.status }}</span>
                   </p>
                   <p>
-                    Species: <span>{{ resident.species }}</span>
+                    Species: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ resident.species }}</span>
                   </p>
                   <p>
-                    Gender: <span> {{ resident.gender }}</span>
+                    Gender: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ resident.gender }}</span>
                   </p>
                 </li>
               </ul>
@@ -78,10 +78,4 @@ const { result, loading, error } = useQuery(locationResult,{
       </div>
   <Footer/>
 </template>
-<style scoped>
-span:hover {
-  color: orange;
-  font-style: italic;
-  cursor: pointer;
-}
-</style>
+
