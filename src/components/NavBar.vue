@@ -8,10 +8,10 @@ import {RouterLink} from 'vue-router'
         <div class="flex justify-center items-center m-[20px]">
         </div>
         <ul class="flex p-[10px]">
-            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink active-class="active" to="/">Home</RouterLink></li>
-            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink active-class="active" to="/episodes">Episodes</RouterLink></li>
-            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink active-class="active" to="/characters">Characters</RouterLink></li>
-            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink active-class="active" to="/locations">Locations</RouterLink></li>
+            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink to="/">Home</RouterLink></li>
+            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink to="/episodes">Episodes</RouterLink></li>
+            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink to="/characters">Characters</RouterLink></li>
+            <li class=" px-10 text-xl hover:italic hover:text-slate-300"><RouterLink to="/locations">Locations</RouterLink></li>
         </ul>
     </div>
 </template>
