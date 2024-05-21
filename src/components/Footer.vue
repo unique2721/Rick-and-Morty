@@ -1,7 +1,4 @@
 <script setup>
-const apologise = () => {
-    window.alert('Sorry for the inconvenience that I did not design a figma yet. Trust me I will design it until next week. Thank you for your patience and support!')
-}
 const date = new Date().getFullYear();
 </script>
 <template>
@@ -13,10 +10,10 @@ const date = new Date().getFullYear();
             <h1 class="mr-2 text-2xl">Github: </h1>
             <img src="../images/gitlogo.png" width="30px" height="30px" alt="git hub logo" class="rounded-full">
         </a>
-          <p @click="apologise" href="https://github.com/unique2721/Rick-and-Morty" target="_blank" class="flex cursor-pointer">
+          <a href="https://www.figma.com/proto/TPeEDafSEYvuq6d5GWoNJJ/Rick-and-Morty?node-id=1-176&t=D7Gh7x9EdgdePx3n-0&scaling=min-zoom&page-id=0%3A1" target="_blank" class="flex cursor-pointer">
             <h1 class="text-3xl mr-2">Figma: </h1>
             <img src="../images/figmalogo.png" width="40px" height="25px" alt="figma logo" class="rounded-full">
-          </p>
+          </a>
     </div>
 </div>
 </template>
