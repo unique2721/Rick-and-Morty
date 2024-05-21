@@ -19,7 +19,7 @@ const characterResult = gql`
     name
     status
     species
-    species
+    gender
     image
     episode {
       id
