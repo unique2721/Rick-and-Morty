@@ -64,16 +64,16 @@ const { result, loading, error } = useQuery(characterResult, {
           <ul class=" text-white text-3xl">
             <li class=" leading-10 ml-14">
               <p>
-                Name: <span> {{ result.character.name }}</span>
+                Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ result.character.name }}</span>
               </p>
               <p>
-                Status: <span> {{ result.character.status }}</span>
+                Status: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ result.character.status }}</span>
               </p>
               <p>
-                Species: <span>{{ result.character.species }}</span>
+                Species: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.character.species }}</span>
               </p>
               <p>
-                Gender: <span> {{ result.character.gender }}</span>
+                Gender: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ result.character.gender }}</span>
               </p>
             </li>
           </ul>
@@ -87,10 +87,10 @@ const { result, loading, error } = useQuery(characterResult, {
             :key="episode.id">
             <div class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5 h-[300px]">
               <ol class=" leading-10">
-                <li>Name: <span>{{ episode.name }}</span></li>
-                <li>Air Date: <span>{{ episode.air_date }}</span></li>
-                <li>Episode: <span>{{ episode.episode }}</span></li>
-                <li>Created: <span>{{episode.created}}</span></li>
+                <li>Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.name }}</span></li>
+                <li>Air Date: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.air_date }}</span></li>
+                <li>Episode: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.episode }}</span></li>
+                <li>Created: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{episode.created}}</span></li>
             </ol>
           </div>
         </div>
@@ -99,13 +99,3 @@ const { result, loading, error } = useQuery(characterResult, {
   <RouterView/>
   <Footer/>
 </template>
-<style scoped>
-span:hover {
-  font-style: italic;
-  color: orange;
-  cursor: pointer;
-}
-span {
-  margin-left: 50px;
-}
-</style>
