@@ -1,7 +1,7 @@
 {
   "version":2,
   "builds": [
-    { "src": "*.vue", "use": "@vercel/node" }
+    { "src": "*.html", "use": "@vercel/node" }
   ],
   "routes": [
       {
