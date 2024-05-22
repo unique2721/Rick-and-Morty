@@ -2,7 +2,7 @@
 const date = new Date().getFullYear();
 </script>
 <template>
-  <div class="bg-green-950 text-white py-5 scroll-smooth">
+  <div class=" bg-gray-700 text-white py-5 scroll-smooth">
     <h1 class="text-center font-bold text-3xl py-5 italic">Links</h1>
     <div class="flex justify-center items-center">
       <p class="text-3xl mr-5 italic">&copy; {{ date }} Gebremariam Kidane</p>
