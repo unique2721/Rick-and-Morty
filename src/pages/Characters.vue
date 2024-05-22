@@ -44,7 +44,7 @@ const { result, loading, error } = useQuery(characterResult, {
 
 <template>
   <!-- details of each character -->
-  <h1 class="text-center text-3xl m-[20px] font-bold italic">
+  <h1 class="text-center text-white text-3xl p-5 bg-slate-900 font-bold italic">
     Character Details
   </h1>
   <p v-if="error">
@@ -53,8 +53,8 @@ const { result, loading, error } = useQuery(characterResult, {
   <p class="text-center text-3xl my-5" v-if="loading">Loading...</p>
 
   <div v-else>
-    <div class="flex justify-center items-center bg-slate-950">
-      <div class="bg-slate-500 flex justify-between items-center flex-wrap">
+    <div class="flex justify-center items-center bg-slate-800">
+      <div class="bg-slate-800 flex justify-between items-center flex-wrap">
         <img :src="`${result.character.image}`" :alt="result.character.name"
           class="rounded-tl-lg rounded-bl-lg w-[300px]" />
         <ul class="text-white text-3xl">
@@ -83,11 +83,11 @@ const { result, loading, error } = useQuery(characterResult, {
         </ul>
       </div>
     </div>
-    <h1 class="text-center text-3xl m-[20px] font-bold italic">
+    <h1 class="text-center text-3xl p-5 text-white bg-slate-900 font-bold italic">
       Episodes Participated
     </h1>
     <div
-      class="bg-slate-700 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
+      class="bg-slate-900 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
       <div v-for="episode in result.character.episode" :key="episode.id">
         <div
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5 h-[300px]">

@@ -34,14 +34,14 @@ const { result, loading, error } = useQuery(locationResult, {
 </script>
 <template>
   <!-- location details -->
-  <h1 class="text-center text-3xl font-bold m-[20px]">Location Details</h1>
+  <h1 class="text-center text-3xl font-bold p-5 text-white bg-slate-800">Location Details</h1>
   <p class="text-center text-3xl" v-if="error">Error: {{ error.message }}</p>
   <p class="text-center text-3xl my-5" v-else-if="loading && !error">
     Loading...
   </p>
   <div v-else>
     <div
-      class="bg-teal-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
+      class="bg-slate-900 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
       <ul>
         <li>
           Name:
@@ -65,14 +65,14 @@ const { result, loading, error } = useQuery(locationResult, {
         </li>
       </ul>
     </div>
-    <h3 class="text-center text-3xl m-[20px] font-bold italic">
+    <h3 class="text-center text-3xl p-5 text-white bg-slate-950 font-bold italic">
       Residents in this Location
     </h3>
     <div
-      class="bg-slate-700 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
+      class="bg-slate-950 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
       <div v-for="resident in result.location.residents" :key="resident.id">
         <div
-          class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-nowrap">
+          class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-900 flex justify-between items-center flex-nowrap">
           <img :src="`${resident.image}`" :alt="resident.name" class="rounded-tl-lg rounded-bl-lg w-[250px]" />
           <ul class="pr-5">
             <li>
