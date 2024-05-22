@@ -19,7 +19,3 @@ const images = ref([
         </Carousel> -->
     </div>
 </template>
-
-<style scoped>
-
-</style>
