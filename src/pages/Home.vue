@@ -14,7 +14,7 @@ import Carousels from '../components/Carousels.vue'
   <h1 class="text-center text-3xl p-7 font-bold">
     Welcome to <span class="italic">Rick and Morty</span>
   </h1>
-  <article class="p-5 flex sm:flex-col md:flex-col lg:flex-col xl:flex-row justify-between bg-yellow-50">
+  <article class="p-5 flex justify-between sm:flex-col md:flex-col lg:flex-col xl:flex-row bg-yellow-50">
       <div class="text-2xl">
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
