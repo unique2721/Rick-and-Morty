@@ -67,7 +67,7 @@ const { result, loading, error } = useQuery(episodeResult, {
       Characters in this Episode
     </h3>
     <div
-      class="bg-slate-700 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5 text-white text-2xl">
+      class="bg-slate-700 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 p-5 text-white text-2xl">
       <div v-for="character in result.episode.characters" :key="character.id">
         <div
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-nowrap">
