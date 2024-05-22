@@ -7,7 +7,7 @@ import CharacterList from "../components/CharacterLists.vue";
 import LocationList from "../components/LocationLists.vue";
 import Footer from "@/components/Footer.vue";
 /* carousels */
-import Carousels from '../components/Carousels.vue'
+import Carousels from "../components/Carousels.vue";
 /* carousel images */
 </script>
 <template>
@@ -15,7 +15,7 @@ import Carousels from '../components/Carousels.vue'
     Welcome to <span class="italic">Rick and Morty</span>
   </h1>
   <article class="p-5 flex justify-between sm:flex-col md:flex-col lg:flex-col xl:flex-row bg-yellow-50">
-      <div class="text-2xl">
+    <div class="text-2xl">
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
         created by <strong>Justin Roiland</strong> and
@@ -36,7 +36,7 @@ import Carousels from '../components/Carousels.vue'
         existential themes and philosophical concepts.
       </p>
       <ul class="text-3xl font-semibold my-10 md:text-center">
-        <li>Created by: Justin Roiland and Dan Harmon </li>
+        <li>Created by: Justin Roiland and Dan Harmon</li>
         <li>Genere: animated science fiction sitcom</li>
         <li>Stars: Justin Roiland< and Dan Harmon</li>
         <li>Rating: 9.1 / 10</li>
@@ -44,7 +44,7 @@ import Carousels from '../components/Carousels.vue'
     </div>
     <!-- carousel -->
     <div>
-      <Carousels/>
+      <Carousels />
     </div>
   </article>
   <EpisodeLists />
@@ -53,6 +53,5 @@ import Carousels from '../components/Carousels.vue'
   <!-- list of characters -->
   <LocationList />
   <!-- list of locations -->
-  <Footer/>
+  <Footer />
 </template>
-

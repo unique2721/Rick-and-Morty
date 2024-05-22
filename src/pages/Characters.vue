@@ -13,31 +13,32 @@ const characterId = parseInt(route.params.id);
 
 /* query only needed data here */
 const characterResult = gql`
-  query Character ($id: ID!) {
-  character (id: $id) {
-    id
-    name
-    status
-    species
-    gender
-    image
-    episode {
+  query Character($id: ID!) {
+    character(id: $id) {
       id
       name
-      air_date
-      episode 
-      created
-    }
-    location {
-      id
-      name
-      type
-      dimension
+      status
+      species
+      gender
+      image
+      episode {
+        id
+        name
+        air_date
+        episode
+        created
+      }
+      location {
+        id
+        name
+        type
+        dimension
+      }
     }
   }
-}`;
+`;
 const { result, loading, error } = useQuery(characterResult, {
-  id: characterId//pass that id variable dynamically
+  id: characterId, //pass that id variable dynamically
 });
 </script>
 
@@ -49,53 +50,72 @@ const { result, loading, error } = useQuery(characterResult, {
   <p v-if="error">
     Something went wrong... <span>error: {{ error.message }}</span>
   </p>
-  <p class="text-center text-3xl my-5"  v-if="loading">Loading...</p>
+  <p class="text-center text-3xl my-5" v-if="loading">Loading...</p>
 
   <div v-else>
-    <div class="flex justify-center items-center bg-slate-950" >
+    <div class="flex justify-center items-center bg-slate-950">
+      <div class="bg-slate-500 flex justify-between items-center flex-wrap">
+        <img :src="`${result.character.image}`" :alt="result.character.name"
+          class="rounded-tl-lg rounded-bl-lg w-[300px]" />
+        <ul class="text-white text-3xl">
+          <li class="leading-10 ml-14">
+            <p>
+              Name:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
+                {{ result.character.name }}</span>
+            </p>
+            <p>
+              Status:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
+                {{ result.character.status }}</span>
+            </p>
+            <p>
+              Species:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{
+                result.character.species }}</span>
+            </p>
+            <p>
+              Gender:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
+                {{ result.character.gender }}</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h1 class="text-center text-3xl m-[20px] font-bold italic">
+      Episodes Participated
+    </h1>
+    <div
+      class="bg-slate-700 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
+      <div v-for="episode in result.character.episode" :key="episode.id">
         <div
-        class="bg-slate-500 flex justify-between items-center flex-wrap "
-        >
-          <img
-            :src="`${result.character.image}`"
-            :alt="result.character.name"
-            class="rounded-tl-lg rounded-bl-lg w-[300px]"
-          />
-          <ul class=" text-white text-3xl">
-            <li class=" leading-10 ml-14">
-              <p>
-                Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ result.character.name }}</span>
-              </p>
-              <p>
-                Status: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ result.character.status }}</span>
-              </p>
-              <p>
-                Species: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.character.species }}</span>
-              </p>
-              <p>
-                Gender: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]"> {{ result.character.gender }}</span>
-              </p>
+          class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5 h-[300px]">
+          <ol class="leading-10">
+            <li>
+              Name:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.name }}</span>
             </li>
-          </ul>
-        </div>
-        </div>
-      <h1 class="text-center text-3xl m-[20px] font-bold italic">
-        Episodes Participated
-      </h1>
-      <div class="bg-slate-700 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
-        <div v-for="episode in result.character.episode"
-            :key="episode.id">
-            <div class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5 h-[300px]">
-              <ol class=" leading-10">
-                <li>Name: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.name }}</span></li>
-                <li>Air Date: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.air_date }}</span></li>
-                <li>Episode: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.episode }}</span></li>
-                <li>Created: <span class=" hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{episode.created}}</span></li>
-            </ol>
-          </div>
+            <li>
+              Air Date:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.air_date
+                }}</span>
+            </li>
+            <li>
+              Episode:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.episode
+                }}</span>
+            </li>
+            <li>
+              Created:
+              <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.created
+                }}</span>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
-  <RouterView/>
-  <Footer/>
+  </div>
+  <RouterView />
+  <Footer />
 </template>
