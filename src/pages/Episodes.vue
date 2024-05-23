@@ -43,22 +43,22 @@ const { result, loading, error } = useQuery(episodeResult, {
       <ul>
         <li>
           Name:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.name
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.name
             }}</span>
         </li>
         <li>
           Air Date:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.air_date
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.air_date
             }}</span>
         </li>
         <li>
           Episode:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.episode
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.episode
             }}</span>
         </li>
         <li>
           Created:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.episode.created
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.created
             }}</span>
         </li>
       </ul>

@@ -45,22 +45,22 @@ const { result, loading, error } = useQuery(locationResult, {
       <ul>
         <li>
           Name:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.name
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.name
             }}</span>
         </li>
         <li>
           Type:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.type
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.type
             }}</span>
         </li>
         <li>
           Dimension:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.dimension
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.dimension
             }}</span>
         </li>
         <li>
           Created:
-          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ result.location.created
+          <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.created
             }}</span>
         </li>
       </ul>
