@@ -101,21 +101,29 @@ const { result, loading, error } = useQuery(characterResult, {
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5 h-[300px] sm:justify-center">
           <ol class="leading-10">
             <li>
-              Name:
+              <span class=" text-green-500">
+                Name:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.name }}</span>
             </li>
             <li>
-              Air Date:
+              <span class=" text-green-500">
+                Air Date:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.air_date
                 }}</span>
             </li>
             <li>
-              Episode:
+              <span class=" text-green-500">
+                Episode:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.episode
                 }}</span>
             </li>
             <li>
-              Created:
+              <span class=" text-green-500">
+                Created:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ episode.created
                 }}</span>
             </li>

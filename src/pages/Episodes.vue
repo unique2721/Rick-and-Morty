@@ -42,22 +42,30 @@ const { result, loading, error } = useQuery(episodeResult, {
       class="bg-slate-950 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
       <ul>
         <li>
-          Name:
+          <span class=" text-green-500">
+            Name:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.name
             }}</span>
         </li>
         <li>
-          Air Date:
+          <span class=" text-green-500">
+            Air Date:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.air_date
             }}</span>
         </li>
         <li>
-          Episode:
+          <span class=" text-green-500">
+            Episode:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.episode
             }}</span>
         </li>
         <li>
-          Created:
+          <span class=" text-green-500">
+            Created:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[100px]">{{ result.episode.created
             }}</span>
         </li>
@@ -75,22 +83,30 @@ const { result, loading, error } = useQuery(episodeResult, {
           <ul class="pr-5">
             <li>
               <p>
-                Name:
+                <span class=" text-green-500">
+                  Name:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                   {{ character.name }}</span>
               </p>
               <p>
-                Status:
+                <span class=" text-green-500">
+                  Status:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                   {{ character.status }}</span>
               </p>
               <p>
-                Species:
+                <span class=" text-green-500">
+                  Species:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ character.species
                   }}</span>
               </p>
               <p>
-                Gender:
+                <span class=" text-green-500">
+                  Gender:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                   {{ character.gender }}</span>
               </p>
