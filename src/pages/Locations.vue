@@ -73,7 +73,7 @@ const { result, loading, error } = useQuery(locationResult, {
       <div v-for="resident in result.location.residents" :key="resident.id">
         <div
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-900 flex justify-between items-center flex-nowrap">
-          <img :src="`${resident.image}`" :alt="resident.name" class="rounded-tl-lg rounded-bl-lg w-[250px]" />
+          <img :src="`${resident.image}`" :alt="resident.name" class="rounded-tl-lg rounded-bl-lg sm:w-[250px] md:w-[250px] lg:w-[200px]" />
           <ul class="pr-5">
             <li>
               <p>

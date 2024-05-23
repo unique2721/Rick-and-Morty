@@ -71,7 +71,7 @@ const { result, loading, error } = useQuery(episodeResult, {
       <div v-for="character in result.episode.characters" :key="character.id">
         <div
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-nowrap">
-          <img :src="`${character.image}`" :alt="character.name" class="rounded-tl-lg rounded-bl-lg w-[250px]" />
+          <img :src="`${character.image}`" :alt="character.name" class="rounded-tl-lg rounded-bl-lg sm:w-[250px] md:w-[250px] lg:w-[200px]" />
           <ul class="pr-5">
             <li>
               <p>
