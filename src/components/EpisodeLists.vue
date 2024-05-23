@@ -27,7 +27,7 @@ const { result, loading, error } = useQuery(episodeResult);
         <RouterLink :to="`/episodes/${episode.id}`">
           <div
             class="hover:border-2 h-[220px] p-5 flex justify-evenly items-center rounded-xl text-slate-100 bg-slate-950 flex-wrap">
-            <h1 class="text-3xl font-bold">Name:</h1>
+            <h1 class="text-3xl font-bold text-green-500">Name:</h1>
             <p class="p text-2xl hover:underline hover:text-orange-400"> {{ episode.name }}</p>
           </div>
         </RouterLink>

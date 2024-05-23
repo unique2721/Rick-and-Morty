@@ -28,7 +28,7 @@ const { result, loading, error } = useQuery(locationResult);
         <RouterLink :to="`/locations/${location.id}`">
           <div
             class="hover:border-2 h-[200px] p-1.5 flex justify-evenly items-center rounded-xl text-slate-100 bg-gray-950 flex-wrap">
-            <h1 class="font-bold text-3xl">Name:</h1>
+            <h1 class="font-bold text-3xl text-green-500">Name:</h1>
             <p class="p text-2xl hover:underline hover:text-orange-400"> {{ location.name }}</p>
           </div>
         </RouterLink>
