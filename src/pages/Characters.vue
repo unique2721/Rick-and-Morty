@@ -9,7 +9,7 @@ import { RouterView } from "vue-router";
 /* route information */
 import { useRoute } from "vue-router";
 const route = useRoute();
-const characterId = parseInt(route.params.id);
+const characterId = ref(parseInt(route.params.id));
 
 /* query only needed data here */
 const characterResult = gql`

@@ -1,6 +1,4 @@
 <script setup>
-/* routing */
-import { RouterLink } from "vue-router";
 /* components */
 import EpisodeLists from "../components/EpisodeLists.vue";
 import CharacterList from "../components/CharacterLists.vue";
