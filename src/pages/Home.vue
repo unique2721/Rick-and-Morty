@@ -11,11 +11,11 @@ import Carousels from "../components/Carousels.vue";
 /* carousel images */
 </script>
 <template>
-  <h1 class="text-center text-3xl bg-black text-white p-5  font-bold">
+  <h1 class="text-center text-3xl p-5 font-extrabold">
     Welcome to <span class="italic">Rick and Morty</span>
   </h1>
-  <article class="p-5 flex justify-between sm:flex-col md:flex-col lg:flex-col xl:flex-row bg-slate-950">
-    <div class="text-2xl text-white">
+  <article class="p-5 flex justify-between sm:flex-col md:flex-col lg:flex-col xl:flex-row">
+    <div class="text-2xl">
       <p>
         Rick and Morty is an American adult animated science fiction sitcom
         created by <strong>Justin Roiland</strong> and
