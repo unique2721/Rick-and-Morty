@@ -87,7 +87,7 @@ const { result, loading, error } = useQuery(characterResult, {
       Episodes Participated
     </h1>
     <div
-      class="bg-slate-900 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
+      class="bg-slate-900 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 p-5 text-white text-2xl">
       <div v-for="episode in result.character.episode" :key="episode.id">
         <div
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-950 flex justify-between items-center flex-wrap p-5 h-[300px]">
