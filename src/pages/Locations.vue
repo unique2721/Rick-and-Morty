@@ -69,7 +69,7 @@ const { result, loading, error } = useQuery(locationResult, {
       Residents in this Location
     </h3>
     <div
-      class="bg-slate-950 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 p-5 text-white text-3xl">
+      class="bg-slate-950 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 p-5 text-white text-2xl">
       <div v-for="resident in result.location.residents" :key="resident.id">
         <div
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-900 flex justify-between items-center flex-nowrap">
