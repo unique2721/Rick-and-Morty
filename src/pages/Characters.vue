@@ -60,22 +60,30 @@ const { result, loading, error } = useQuery(characterResult, {
         <ul class="text-white text-3xl">
           <li class="leading-10 ml-14">
             <p>
-              Name:
+              <span class="text-green-500">
+                Name:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                 {{ result.character.name }}</span>
             </p>
             <p>
-              Status:
+              <span class="text-green-500">
+                Status:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                 {{ result.character.status }}</span>
             </p>
             <p>
-              Species:
+              <span class="text-green-500">
+                Species:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{
                 result.character.species }}</span>
             </p>
             <p>
-              Gender:
+              <span class="text-green-500">
+                Gender:
+              </span>
               <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                 {{ result.character.gender }}</span>
             </p>

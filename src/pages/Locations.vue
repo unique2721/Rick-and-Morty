@@ -44,22 +44,30 @@ const { result, loading, error } = useQuery(locationResult, {
       class="bg-slate-900 py-[30px] flex justify-center items-center flex-col flex-wrap text-white text-3xl leading-10">
       <ul>
         <li>
-          Name:
+          <span class=" text-green-500">
+            Name:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.name
             }}</span>
         </li>
         <li>
-          Type:
+          <span class=" text-green-500">
+            Type:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.type
             }}</span>
         </li>
         <li>
-          Dimension:
+          <span class=" text-green-500">
+            Dimension:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.dimension
             }}</span>
         </li>
         <li>
-          Created:
+          <span class=" text-green-500">
+            Created:
+          </span>
           <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[150px]">{{ result.location.created
             }}</span>
         </li>
@@ -73,26 +81,35 @@ const { result, loading, error } = useQuery(locationResult, {
       <div v-for="resident in result.location.residents" :key="resident.id">
         <div
           class="hover:border-2 shadow-md border-emerald-50 rounded-xl bg-slate-900 flex justify-between items-center flex-nowrap">
-          <img :src="`${resident.image}`" :alt="resident.name" class="rounded-tl-lg rounded-bl-lg sm:w-[250px] md:w-[250px] lg:w-[200px]" />
+          <img :src="`${resident.image}`" :alt="resident.name"
+            class="rounded-tl-lg rounded-bl-lg sm:w-[250px] md:w-[250px] lg:w-[200px]" />
           <ul class="pr-5">
             <li>
               <p>
-                Name:
+                <span class=" text-green-500">
+                  Name:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                   {{ resident.name }}</span>
               </p>
               <p>
-                Status:
+                <span class=" text-green-500">
+                  Status:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                   {{ resident.status }}</span>
               </p>
               <p>
-                Species:
+                <span class=" text-green-500">
+                  Species:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">{{ resident.species
                   }}</span>
               </p>
               <p>
-                Gender:
+                <span class=" text-green-500">
+                  Gender:
+                </span>
                 <span class="hover:italic hover:text-orange-500 hover:cursor-pointer ml-[50px]">
                   {{ resident.gender }}</span>
               </p>
