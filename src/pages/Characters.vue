@@ -54,7 +54,7 @@ const { result, loading, error } = useQuery(characterResult, {
 
   <div v-else>
     <div class="flex justify-center items-center bg-slate-800">
-      <div class="bg-slate-800 flex justify-between items-center flex-wrap">
+      <div class="bg-slate-800 flex justify-between items-center flex-nowrap">
         <img :src="`${result.character.image}`" :alt="result.character.name"
           class="rounded-tl-lg rounded-bl-lg w-[300px]" />
         <ul class="text-white text-3xl">
