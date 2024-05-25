@@ -1,10 +1,5 @@
 <script setup>
-import img from '../images/logo.png';
-import { ref } from 'vue';
-import { Carousel, Slide } from 'vue3-carousel';
-const images = ref([
-    "https://rickandmortyapi.com/api/character/avatar/10.jpeg",
-    "https://rickandmortyapi.com/api/character/avatar/9.jpeg"]);
+/* import { Carousel, Slide } from 'vue3-carousel'; */
 </script>
 
 <template>
